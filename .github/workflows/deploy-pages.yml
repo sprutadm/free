@@ -23,6 +23,7 @@ jobs:
         
       - name: Copy QR codes to html directory
         run: |
+          rm -rf html/qr-codes
           cp -r qr-codes html/
           
       - name: Deploy to GitHub Pages
