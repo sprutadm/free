@@ -23,7 +23,7 @@ for i in range(1, 26):
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
-        box_size=12,  # Увеличили размер ячейки для получения ~400px
+        box_size=12,  # Размер ячейки для получения ~400px
         border=1,     # Минимальный отступ
     )
     qr.add_data(config_url)
@@ -38,7 +38,7 @@ for i in range(1, 26):
         img = img.crop(bbox)
     
     # Сохраняем изображение
-    filename = f"qr-codes/{i}.png"
+    filename = f"qr-codes/Mariya-Club-{i}.png"
     img.save(filename)
     
     print(f"✅ Создан QR-код: {filename} -> {config_url}")
