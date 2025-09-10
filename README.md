@@ -1,4 +1,4 @@
-<div align="center">
+<!-- <div align="center">
     <a href="https://www.youtube.com/@avencores/" target="_blank">
       <img src="https://github.com/user-attachments/assets/338bcd74-e3c3-4700-87ab-7985058bd17e" alt="YouTube" height="40">
     </a>
@@ -11,7 +11,7 @@
     <a href="https://dzen.ru/avencores" target="_blank">
       <img src="https://github.com/user-attachments/assets/bd55f5cf-963c-4eb8-9029-7b80c8c11411" alt="Dzen" height="40">
     </a>
-</div>
+</div> -->
 
 # 📖 Описание проекта
 
@@ -19,10 +19,13 @@
   
 Каждый конфиг — это TXT-подписка, которую можно импортировать практически в любой современный клиент (`v2rayNG`, `NekoRay`, `Throne`, `v2rayN`, `V2Box`, `v2RayTun`, `Hiddify` и др.).
 
-Конфиги обновляются каждые **9 минут** с помощью GitHub Actions, поэтому ссылки из раздела **«📋 Общий список всех вечно актуальных конфигов»** всегда актуальны.
+Мы рекомендуем **Hiddify**
+Он есть для всех систем и бесплатен.
 
----
+Конфиги обновляются каждые **10 минут** с помощью GitHub Actions, поэтому ссылки из раздела **«📋 Общий список всех вечно актуальных конфигов»** всегда актуальны.
 
+<!-- --- -->
+<!-- 
 ## 📑 Содержание
 - [📖 Описание проекта](#-описание-проекта)
   - [📑 Содержание](#-содержание)
@@ -50,10 +53,10 @@
 - Результаты сохраняются в каталог `githubmirror/` и сразу пушатся в этот репозиторий.
 
 Каждый запуск создаёт коммит вида:
-> 🚀 Обновление конфига по часовому поясу Европа/Москва: HH:MM | DD.MM.YYYY
+> 🚀 Обновление конфига по часовому поясу Европа/Москва: HH:MM | DD.MM.YYYY -->
 
----
-
+<!-- --- -->
+<!-- 
 ## 🗂 Структура репозитория
 ```text
 githubmirror/        — сгенерированные .txt конфиги (23 файла)
@@ -63,22 +66,22 @@ source/              — Python-скрипт и зависимости гене�
  └─ requirements.txt
 .github/workflows/   — CI/CD (авто-обновление каждые 9 мин)
 README.md            — этот файл
-```
+``` -->
 
----
-
+<!-- --- -->
+<!-- 
 ## 🔧 Локальный запуск генератора
 ```bash
-git clone https://github.com/AvenCores/goida-vpn-configs
+git clone https://github.com/sprutadm/free
 cd goida-vpn-configs/source
 python -m pip install -r requirements.txt
 export MY_TOKEN=<GITHUB_TOKEN>   # токен с правом repo, чтобы пушить изменения
 python main.py                  # конфиги появятся в ../githubmirror
 ```
 
-> **Важно!** В файле `source/main.py` вручную задайте `REPO_NAME = "<username>/<repository>"`, если запускаете скрипт из форка.
+> **Важно!** В файле `source/main.py` вручную задайте `REPO_NAME = "<username>/<repository>"`, если запускаете скрипт из форка. -->
 
----
+<!-- ---
 
 # 🎦 Видео гайд по установке и решению проблем
 
@@ -96,19 +99,19 @@ python main.py                  # конфиги появятся в ../githubmi
 
 [**Смотреть в Telegram**](https://t.me/avencoreschat/56595)
 
-</div>
+</div> -->
 
----
+<!-- --- -->
 
-# 🗂️ Общее меню гайдов репозитория
+<!-- # 🗂️ Общее меню гайдов репозитория
 
 <details>
 
 <summary>👩‍💻 Исходный код для генерации вечно актуальных конфигов</summary>
 
-Ссылка на исходный код — [Ссылка](https://github.com/AvenCores/goida-vpn-configs/tree/main/source)
+Ссылка на исходный код — [Ссылка](https://github.com/sprutadm/free/tree/main/source)
 
-</details>
+</details> -->
 
 
 ---
@@ -116,35 +119,35 @@ python main.py                  # конфиги появятся в ../githubmi
 
 <summary>📋 Общий список всех вечно актуальных конфигов</summary>
 
-> Рекомендованные списки: **[6](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/25.txt)**.
+> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt)**.
 
-1) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/1.txt`
-2) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/2.txt`
-3) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/3.txt`
-4) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/4.txt`
-5) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/5.txt`
-6) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/6.txt`
-7) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/7.txt`
-8) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/8.txt`
-9) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/9.txt`
-10) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/10.txt`
-11) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/11.txt`
-12) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/12.txt`
-13) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/13.txt`
-14) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/14.txt`
-15) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/15.txt`
-16) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/16.txt`
-17) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/17.txt`
-18) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/18.txt`
-19) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/19.txt`
-20) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/20.txt`
-21) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/21.txt`
-22) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/22.txt`
-23) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/23.txt`
-24) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/24.txt`
-25) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/25.txt`
+1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/1.txt`
+2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/2.txt`
+3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/3.txt`
+4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/4.txt`
+5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/5.txt`
+6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt`
+7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/7.txt`
+8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/8.txt`
+9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/9.txt`
+10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/10.txt`
+11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/11.txt`
+12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/12.txt`
+13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/13.txt`
+14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/14.txt`
+15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/15.txt`
+16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/16.txt`
+17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/17.txt`
+18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/18.txt`
+19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/19.txt`
+20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/20.txt`
+21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/21.txt`
+22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt`
+23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt`
+24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt`
+25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt`
 
-🔗 [Ссылка на QR-коды вечно актуальных конфигов](https://github.com/AvenCores/goida-vpn-configs/tree/main/qr-codes)
+🔗 [Ссылка на QR-коды вечно актуальных конфигов](https://github.com/sprutadm/free/tree/main/qr-codes)
 </details>
 
 
@@ -159,33 +162,33 @@ python main.py                  # конфиги появятся в ../githubmi
 
  - [ ] **Вечно актуальные**
 
-> Рекомендованные списки: **[6](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/25.txt)**.
+> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt)**.
 
-1) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/1.txt`
-2) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/2.txt`
-3) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/3.txt`
-4) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/4.txt`
-5) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/5.txt`
-6) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/6.txt`
-7) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/7.txt`
-8) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/8.txt`
-9) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/9.txt`
-10) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/10.txt`
-11) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/11.txt`
-12) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/12.txt`
-13) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/13.txt`
-14) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/14.txt`
-15) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/15.txt`
-16) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/16.txt`
-17) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/17.txt`
-18) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/18.txt`
-19) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/19.txt`
-20) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/20.txt`
-21) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/21.txt`
-22) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/22.txt`
-23) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/23.txt`
-24) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/24.txt`
-25) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/25.txt`
+1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/1.txt`
+2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/2.txt`
+3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/3.txt`
+4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/4.txt`
+5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/5.txt`
+6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt`
+7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/7.txt`
+8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/8.txt`
+9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/9.txt`
+10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/10.txt`
+11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/11.txt`
+12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/12.txt`
+13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/13.txt`
+14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/14.txt`
+15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/15.txt`
+16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/16.txt`
+17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/17.txt`
+18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/18.txt`
+19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/19.txt`
+20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/20.txt`
+21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/21.txt`
+22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt`
+23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt`
+24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt`
+25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt`
 
 **3.** Заходим в приложение **«v2rayNG»** и в правом верхнем углу нажимаем на ➕, а затем выбираем **«Импорт из буфера обмена»**.
    
@@ -201,9 +204,9 @@ python main.py                  # конфиги появятся в ../githubmi
 
 **1.** Скачиваем **«v2rayNG»** — [Ссылка](https://github.com/2dust/v2rayNG/releases/download/1.10.19/v2rayNG_1.10.19_universal.apk)
 
-> Рекомендованные **«QR-коды»**: **[6](https://github.com/AvenCores/goida-vpn-configs/blob/main/qr-codes/6.png)**, **[22](https://github.com/AvenCores/goida-vpn-configs/blob/main/qr-codes/22.png)**, **[23](https://github.com/AvenCores/goida-vpn-configs/blob/main/qr-codes/23.png)**, **[24](https://github.com/AvenCores/goida-vpn-configs/blob/main/qr-codes/24.png)** и **[25](https://github.com/AvenCores/goida-vpn-configs/blob/main/qr-codes/25.png)**.
+> Рекомендованные **«QR-коды»**: **[6](https://github.com/sprutadm/free/blob/main/qr-codes/6.png)**, **[22](https://github.com/sprutadm/free/blob/main/qr-codes/22.png)**, **[23](https://github.com/sprutadm/free/blob/main/qr-codes/23.png)**, **[24](https://github.com/sprutadm/free/blob/main/qr-codes/24.png)** и **[25](https://github.com/sprutadm/free/blob/main/qr-codes/25.png)**.
 
-**2.** Скачиваем **«QR-коды»** вечно актуальных конфигов — [Ссылка](https://github.com/AvenCores/goida-vpn-configs/tree/main/qr-codes)
+**2.** Скачиваем **«QR-коды»** вечно актуальных конфигов — [Ссылка](https://github.com/sprutadm/free/tree/main/qr-codes)
 
 **3**. Заходим в приложение **«v2rayNG»** и в правом верхнем углу нажимаем на ➕, а затем выбираем **«Импорт из QR-кода»**, выбираем картинку нажав на иконку фото в правом верхнем углу.
 
@@ -281,33 +284,33 @@ python main.py                  # конфиги появятся в ../githubmi
 
  - [ ] **Вечно актуальные**
 
-> Рекомендованные списки: **[6](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/25.txt)**.
+> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt)**.
 
-1) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/1.txt`
-2) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/2.txt`
-3) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/3.txt`
-4) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/4.txt`
-5) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/5.txt`
-6) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/6.txt`
-7) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/7.txt`
-8) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/8.txt`
-9) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/9.txt`
-10) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/10.txt`
-11) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/11.txt`
-12) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/12.txt`
-13) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/13.txt`
-14) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/14.txt`
-15) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/15.txt`
-16) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/16.txt`
-17) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/17.txt`
-18) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/18.txt`
-19) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/19.txt`
-20) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/20.txt`
-21) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/21.txt`
-22) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/22.txt`
-23) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/23.txt`
-24) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/24.txt`
-25) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/25.txt`
+1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/1.txt`
+2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/2.txt`
+3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/3.txt`
+4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/4.txt`
+5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/5.txt`
+6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt`
+7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/7.txt`
+8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/8.txt`
+9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/9.txt`
+10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/10.txt`
+11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/11.txt`
+12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/12.txt`
+13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/13.txt`
+14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/14.txt`
+15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/15.txt`
+16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/16.txt`
+17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/17.txt`
+18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/18.txt`
+19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/19.txt`
+20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/20.txt`
+21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/21.txt`
+22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt`
+23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt`
+24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt`
+25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt`
 
 **3.** Нажимаем на **«Профили»**, а затем **«Добавить профиль из буфера обмена»**.
 
@@ -361,33 +364,33 @@ python main.py                  # конфиги появятся в ../githubmi
 
  - [ ] **Вечно актуальные**
 
-> Рекомендованные списки: **[6](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/25.txt)**.
+> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt)**.
 
-1) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/1.txt`
-2) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/2.txt`
-3) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/3.txt`
-4) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/4.txt`
-5) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/5.txt`
-6) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/6.txt`
-7) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/7.txt`
-8) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/8.txt`
-9) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/9.txt`
-10) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/10.txt`
-11) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/11.txt`
-12) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/12.txt`
-13) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/13.txt`
-14) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/14.txt`
-15) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/15.txt`
-16) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/16.txt`
-17) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/17.txt`
-18) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/18.txt`
-19) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/19.txt`
-20) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/20.txt`
-21) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/21.txt`
-22) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/22.txt`
-23) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/23.txt`
-24) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/24.txt`
-25) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/25.txt`
+1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/1.txt`
+2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/2.txt`
+3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/3.txt`
+4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/4.txt`
+5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/5.txt`
+6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt`
+7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/7.txt`
+8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/8.txt`
+9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/9.txt`
+10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/10.txt`
+11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/11.txt`
+12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/12.txt`
+13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/13.txt`
+14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/14.txt`
+15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/15.txt`
+16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/16.txt`
+17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/17.txt`
+18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/18.txt`
+19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/19.txt`
+20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/20.txt`
+21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/21.txt`
+22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt`
+23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt`
+24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt`
+25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt`
 
 **3.** Заходим в приложение **«V2Box - V2ray Client»** и переходим во вкладку **«Config»**, нажимаем на плюсик в правом верхнем углу, затем — **«Добавить подписку»**, вводим любое **«Название»** и вставляем ссылку на конфиг в поле **«URL»**.
 
@@ -421,33 +424,33 @@ python main.py                  # конфиги появятся в ../githubmi
 
  - [ ] **Вечно актуальные**
 
-> Рекомендованные списки: **[6](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/25.txt)**.
+> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt)**.
 
-1) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/1.txt`
-2) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/2.txt`
-3) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/3.txt`
-4) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/4.txt`
-5) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/5.txt`
-6) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/6.txt`
-7) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/7.txt`
-8) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/8.txt`
-9) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/9.txt`
-10) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/10.txt`
-11) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/11.txt`
-12) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/12.txt`
-13) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/13.txt`
-14) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/14.txt`
-15) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/15.txt`
-16) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/16.txt`
-17) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/17.txt`
-18) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/18.txt`
-19) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/19.txt`
-20) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/20.txt`
-21) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/21.txt`
-22) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/22.txt`
-23) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/23.txt`
-24) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/24.txt`
-25) `https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/25.txt`
+1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/1.txt`
+2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/2.txt`
+3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/3.txt`
+4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/4.txt`
+5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/5.txt`
+6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt`
+7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/7.txt`
+8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/8.txt`
+9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/9.txt`
+10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/10.txt`
+11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/11.txt`
+12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/12.txt`
+13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/13.txt`
+14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/14.txt`
+15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/15.txt`
+16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/16.txt`
+17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/17.txt`
+18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/18.txt`
+19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/19.txt`
+20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/20.txt`
+21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/21.txt`
+22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt`
+23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt`
+24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt`
+25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt`
 
 **4.** Нажимаем на кнопку **«Добавить из буфера обмена»**.
    
@@ -479,4 +482,4 @@ python main.py                  # конфиги появятся в ../githubmi
 
 ---
 # 💰 Поддержать автора
-+ **SBER**: `2202 2050 7215 4401`
+<!-- + **SBER**: `2202 2050 7215 4401` -->
