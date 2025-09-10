@@ -30,7 +30,7 @@ BASE_URL = "https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror"
 # Генерируем QR-коды для всех 25 конфигураций
 for i in range(1, 26):
     # URL конфигурации
-    config_url = f"{BASE_URL}/{i}.txt"
+    config_url = f"{BASE_URL}/mariya-{i}.txt"
     
     # Создаем QR-код с минимальными отступами
     qr = qrcode.QRCode(
@@ -51,7 +51,7 @@ for i in range(1, 26):
         img = img.crop(bbox)
     
     # Сохраняем изображение в корневой директории
-    filename = os.path.join(qr_codes_dir, f"{i}.png")
+    filename = os.path.join(qr_codes_dir, f"mariya-{i}.png")
     img.save(filename)
     
     print(f"✅ Создан QR-код: {filename} -> {config_url}")

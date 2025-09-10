@@ -50,7 +50,7 @@
 ## ⚙️ Как это работает
 - Скрипт [`source/main.py`](source/main.py) скачивает публичные подписки из различных источников.
 - Workflow [`frequent_update.yml`](.github/workflows/frequent_update.yml) запускает скрипт по cron `*/9 * * * *`.
-- Результаты сохраняются в каталог `githubmirror/` и сразу пушатся в этот репозиторий.
+- Результаты сохраняются в каталог `githubmirror/mariya-` и сразу пушатся в этот репозиторий.
 
 Каждый запуск создаёт коммит вида:
 > 🚀 Обновление конфига по часовому поясу Европа/Москва: HH:MM | DD.MM.YYYY -->
@@ -59,8 +59,8 @@
 <!-- 
 ## 🗂 Структура репозитория
 ```text
-githubmirror/        — сгенерированные .txt конфиги (23 файла)
-qr-codes/            — PNG-версии конфигов для импорта по QR
+githubmirror/mariya-        — сгенерированные .txt конфиги (23 файла)
+qr-codes/mariya-            — PNG-версии конфигов для импорта по QR
 source/              — Python-скрипт и зависимости генератора
  ├─ main.py
  └─ requirements.txt
@@ -119,33 +119,33 @@ python main.py                  # конфиги появятся в ../githubmi
 
 <summary>📋 Общий список всех вечно актуальных конфигов</summary>
 
-> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt)**.
+> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-25.txt)**.
 
-1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/1.txt`
-2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/2.txt`
-3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/3.txt`
-4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/4.txt`
-5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/5.txt`
-6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt`
-7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/7.txt`
-8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/8.txt`
-9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/9.txt`
-10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/10.txt`
-11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/11.txt`
-12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/12.txt`
-13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/13.txt`
-14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/14.txt`
-15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/15.txt`
-16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/16.txt`
-17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/17.txt`
-18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/18.txt`
-19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/19.txt`
-20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/20.txt`
-21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/21.txt`
-22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt`
-23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt`
-24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt`
-25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt`
+1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-1.txt`
+2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-2.txt`
+3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-3.txt`
+4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-4.txt`
+5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-5.txt`
+6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-6.txt`
+7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-7.txt`
+8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-8.txt`
+9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-9.txt`
+10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-10.txt`
+11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-11.txt`
+12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-12.txt`
+13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-13.txt`
+14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-14.txt`
+15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-15.txt`
+16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-16.txt`
+17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-17.txt`
+18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-18.txt`
+19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-19.txt`
+20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-20.txt`
+21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-21.txt`
+22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt`
+23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt`
+24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt`
+25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-25.txt`
 
 🔗 [Ссылка на QR-коды вечно актуальных конфигов](https://github.com/sprutadm/free/tree/main/qr-codes)
 </details>
@@ -162,33 +162,33 @@ python main.py                  # конфиги появятся в ../githubmi
 
  - [ ] **Вечно актуальные**
 
-> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt)**.
+> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-25.txt)**.
 
-1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/1.txt`
-2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/2.txt`
-3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/3.txt`
-4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/4.txt`
-5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/5.txt`
-6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt`
-7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/7.txt`
-8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/8.txt`
-9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/9.txt`
-10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/10.txt`
-11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/11.txt`
-12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/12.txt`
-13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/13.txt`
-14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/14.txt`
-15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/15.txt`
-16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/16.txt`
-17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/17.txt`
-18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/18.txt`
-19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/19.txt`
-20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/20.txt`
-21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/21.txt`
-22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt`
-23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt`
-24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt`
-25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt`
+1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-1.txt`
+2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-2.txt`
+3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-3.txt`
+4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-4.txt`
+5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-5.txt`
+6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-6.txt`
+7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-7.txt`
+8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-8.txt`
+9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-9.txt`
+10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-10.txt`
+11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-11.txt`
+12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-12.txt`
+13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-13.txt`
+14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-14.txt`
+15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-15.txt`
+16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-16.txt`
+17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-17.txt`
+18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-18.txt`
+19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-19.txt`
+20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-20.txt`
+21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-21.txt`
+22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt`
+23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt`
+24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt`
+25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-25.txt`
 
 **3.** Заходим в приложение **«v2rayNG»** и в правом верхнем углу нажимаем на ➕, а затем выбираем **«Импорт из буфера обмена»**.
    
@@ -204,7 +204,7 @@ python main.py                  # конфиги появятся в ../githubmi
 
 **1.** Скачиваем **«v2rayNG»** — [Ссылка](https://github.com/2dust/v2rayNG/releases/download/1.10.19/v2rayNG_1.10.19_universal.apk)
 
-> Рекомендованные **«QR-коды»**: **[6](https://github.com/sprutadm/free/blob/main/qr-codes/6.png)**, **[22](https://github.com/sprutadm/free/blob/main/qr-codes/22.png)**, **[23](https://github.com/sprutadm/free/blob/main/qr-codes/23.png)**, **[24](https://github.com/sprutadm/free/blob/main/qr-codes/24.png)** и **[25](https://github.com/sprutadm/free/blob/main/qr-codes/25.png)**.
+> Рекомендованные **«QR-коды»**: **[6](https://github.com/sprutadm/free/blob/main/qr-codes/mariya-6.png)**, **[22](https://github.com/sprutadm/free/blob/main/qr-codes/mariya-22.png)**, **[23](https://github.com/sprutadm/free/blob/main/qr-codes/mariya-23.png)**, **[24](https://github.com/sprutadm/free/blob/main/qr-codes/mariya-24.png)** и **[25](https://github.com/sprutadm/free/blob/main/qr-codes/mariya-25.png)**.
 
 **2.** Скачиваем **«QR-коды»** вечно актуальных конфигов — [Ссылка](https://github.com/sprutadm/free/tree/main/qr-codes)
 
@@ -284,33 +284,33 @@ python main.py                  # конфиги появятся в ../githubmi
 
  - [ ] **Вечно актуальные**
 
-> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt)**.
+> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-25.txt)**.
 
-1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/1.txt`
-2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/2.txt`
-3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/3.txt`
-4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/4.txt`
-5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/5.txt`
-6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt`
-7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/7.txt`
-8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/8.txt`
-9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/9.txt`
-10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/10.txt`
-11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/11.txt`
-12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/12.txt`
-13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/13.txt`
-14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/14.txt`
-15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/15.txt`
-16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/16.txt`
-17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/17.txt`
-18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/18.txt`
-19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/19.txt`
-20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/20.txt`
-21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/21.txt`
-22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt`
-23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt`
-24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt`
-25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt`
+1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-1.txt`
+2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-2.txt`
+3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-3.txt`
+4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-4.txt`
+5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-5.txt`
+6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-6.txt`
+7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-7.txt`
+8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-8.txt`
+9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-9.txt`
+10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-10.txt`
+11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-11.txt`
+12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-12.txt`
+13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-13.txt`
+14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-14.txt`
+15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-15.txt`
+16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-16.txt`
+17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-17.txt`
+18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-18.txt`
+19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-19.txt`
+20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-20.txt`
+21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-21.txt`
+22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt`
+23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt`
+24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt`
+25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-25.txt`
 
 **3.** Нажимаем на **«Профили»**, а затем **«Добавить профиль из буфера обмена»**.
 
@@ -364,33 +364,33 @@ python main.py                  # конфиги появятся в ../githubmi
 
  - [ ] **Вечно актуальные**
 
-> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt)**.
+> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-25.txt)**.
 
-1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/1.txt`
-2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/2.txt`
-3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/3.txt`
-4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/4.txt`
-5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/5.txt`
-6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt`
-7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/7.txt`
-8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/8.txt`
-9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/9.txt`
-10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/10.txt`
-11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/11.txt`
-12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/12.txt`
-13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/13.txt`
-14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/14.txt`
-15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/15.txt`
-16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/16.txt`
-17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/17.txt`
-18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/18.txt`
-19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/19.txt`
-20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/20.txt`
-21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/21.txt`
-22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt`
-23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt`
-24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt`
-25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt`
+1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-1.txt`
+2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-2.txt`
+3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-3.txt`
+4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-4.txt`
+5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-5.txt`
+6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-6.txt`
+7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-7.txt`
+8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-8.txt`
+9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-9.txt`
+10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-10.txt`
+11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-11.txt`
+12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-12.txt`
+13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-13.txt`
+14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-14.txt`
+15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-15.txt`
+16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-16.txt`
+17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-17.txt`
+18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-18.txt`
+19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-19.txt`
+20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-20.txt`
+21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-21.txt`
+22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt`
+23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt`
+24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt`
+25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-25.txt`
 
 **3.** Заходим в приложение **«V2Box - V2ray Client»** и переходим во вкладку **«Config»**, нажимаем на плюсик в правом верхнем углу, затем — **«Добавить подписку»**, вводим любое **«Название»** и вставляем ссылку на конфиг в поле **«URL»**.
 
@@ -424,33 +424,33 @@ python main.py                  # конфиги появятся в ../githubmi
 
  - [ ] **Вечно актуальные**
 
-> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt)**.
+> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt)** и **[25](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-25.txt)**.
 
-1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/1.txt`
-2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/2.txt`
-3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/3.txt`
-4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/4.txt`
-5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/5.txt`
-6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/6.txt`
-7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/7.txt`
-8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/8.txt`
-9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/9.txt`
-10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/10.txt`
-11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/11.txt`
-12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/12.txt`
-13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/13.txt`
-14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/14.txt`
-15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/15.txt`
-16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/16.txt`
-17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/17.txt`
-18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/18.txt`
-19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/19.txt`
-20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/20.txt`
-21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/21.txt`
-22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/22.txt`
-23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/23.txt`
-24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/24.txt`
-25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/25.txt`
+1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-1.txt`
+2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-2.txt`
+3) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-3.txt`
+4) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-4.txt`
+5) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-5.txt`
+6) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-6.txt`
+7) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-7.txt`
+8) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-8.txt`
+9) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-9.txt`
+10) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-10.txt`
+11) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-11.txt`
+12) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-12.txt`
+13) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-13.txt`
+14) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-14.txt`
+15) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-15.txt`
+16) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-16.txt`
+17) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-17.txt`
+18) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-18.txt`
+19) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-19.txt`
+20) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-20.txt`
+21) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-21.txt`
+22) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt`
+23) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt`
+24) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt`
+25) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-25.txt`
 
 **4.** Нажимаем на кнопку **«Добавить из буфера обмена»**.
    

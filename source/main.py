@@ -20,11 +20,11 @@ LOGS_BY_FILE: dict[int, list[str]] = defaultdict(list)
 _LOG_LOCK = threading.Lock()
 
 
-_GITHUBMIRROR_INDEX_RE = re.compile(r"githubmirror/(\d+)\.txt")
+_GITHUBMIRROR_INDEX_RE = re.compile(r"githubmirror/mariya-(\d+)\.txt")
 
 
 def _extract_index(msg: str) -> int:
-    """Пытается извлечь номер файла из строки вида 'githubmirror/12.txt'.
+    """Пытается извлечь номер файла из строки вида 'githubmirror/mariya-12.txt'.
     Если номер не найден, возвращает 0 (для общих сообщений)."""
     m = _GITHUBMIRROR_INDEX_RE.search(msg)
     if m:
@@ -93,8 +93,8 @@ URLS = [
 ]
 
 # Пути для сохранения файлов локально и в репозитории
-REMOTE_PATHS = [f"githubmirror/{i+1}.txt" for i in range(len(URLS))]
-LOCAL_PATHS = [f"githubmirror/{i+1}.txt" for i in range(len(URLS))]
+REMOTE_PATHS = [f"githubmirror/mariya-{i+1}.txt" for i in range(len(URLS))]
+LOCAL_PATHS = [f"githubmirror/mariya-{i+1}.txt" for i in range(len(URLS))]
 
 # Отключаем предупреждения, если будем использовать verify=False
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
