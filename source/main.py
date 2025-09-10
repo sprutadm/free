@@ -41,8 +41,8 @@ def log(message: str):
     with _LOG_LOCK:
         LOGS_BY_FILE[idx].append(message)
 
-# Получение текущего времени по часовому поясу Европа/Москва
-zone = zoneinfo.ZoneInfo("Europe/Moscow")
+# Получение текущего времени по часовому поясу Европа/Варшава
+zone = zoneinfo.ZoneInfo("Europe/Warsaw")
 thistime = datetime.now(zone)
 offset = thistime.strftime("%H:%M | %d.%m.%Y")  # Формат времени для коммитов
 
@@ -208,7 +208,7 @@ def upload_to_github(local_path, remote_path):
                 basename = os.path.basename(remote_path)
                 repo.update_file(
                     path=remote_path,
-                    message=f"🚀 Обновление {basename} по часовому поясу Европа/Москва: {offset}",
+                    message=f"🚀 Обновление {basename} по часовому поясу Европа/Варшава: {offset}",
                     content=content,
                     sha=file_in_repo.sha
                 )
@@ -221,7 +221,7 @@ def upload_to_github(local_path, remote_path):
                 basename = os.path.basename(remote_path)
                 repo.create_file(
                     path=remote_path,
-                    message=f"🆕 Первый коммит {basename} по часовому поясу Европа/Москва: {offset}",
+                    message=f"🆕 Первый коммит {basename} по часовому поясу Европа/Варшава: {offset}",
                     content=content
                 )
                 log(f"🆕 Файл {remote_path} создан.")
