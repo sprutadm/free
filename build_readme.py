@@ -9,8 +9,8 @@ import re
 def build_readme():
     """Объединяет README.md из частей"""
     
-    # Читаем основной файл из docs/
-    with open('docs/README.md', 'r', encoding='utf-8') as f:
+    # Читаем основной файл
+    with open('README.md', 'r', encoding='utf-8') as f:
         content = f.read()
     
     # Ищем директивы включения файлов

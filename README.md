@@ -17,11 +17,15 @@
 
 ---
 
+## Общий список всех вечно актуальных конфигов
+
 <details>
 
-<summary>📋 Общий список всех вечно актуальных конфигов</summary>
 
-> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-6.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt)**.
+<summary>
+📋 Cписок конфигов</summary>
+
+> Рекомендованные списки: **[6](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-6.txt)**, **[10](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-10.txt)**, **[22](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt)**, **[23](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt)**, **[24](https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt)**.
 
 1) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-1.txt`
 2) `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-2.txt`
@@ -62,7 +66,7 @@
 
 <summary>💻 Гайд для MacOS/iOS</summary>
 
-**1.** Скачиваем **«Hiddify»** — [Ссылка](https://github.com/hiddify/hiddify-app/releases/latest/download/Hiddify-MacOS.dmg)
+**1.** Скачиваем **«Hiddify»** — [Ссылка](https://apps.apple.com/ua/app/hiddify-proxy-vpn/id6596777532)
 
 **2.** Нажимаем **«Новый профиль»**.
 
