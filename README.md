@@ -134,12 +134,12 @@
 ## Примеры для 10 и 22 списка серверов
 
 ### Mariya-10 
-![mariya-10](qr-codes/mariya-10.png)
+![mariya-10](docs/qr-codes/mariya-10.png)
 
 ---
 
 ### Mariya-22 
-![mariya-22](qr-codes/mariya-22.png)
+![mariya-22](docs/qr-codes/mariya-22.png)
 
 ---
 

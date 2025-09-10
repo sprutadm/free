@@ -217,11 +217,12 @@
     <!-- Header -->
     <header class="gradient-bg text-white py-12">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
-                🌟 Mariya VPN
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in flex items-center justify-center">
+                <img src="img/insurance.svg" alt="Insurance" class="w-20 h-20 mr-4">
+                <span class="align-middle">Mariya VPN</span>
             </h1>
             <p class="text-xl md:text-2xl opacity-90 animate-fade-in">
-                QR-коды для быстрого подключения
+                Быстро • Удобно • Безопасно
             </p>
             <div class="mt-6 animate-bounce-slow">
                 <span class="inline-block w-3 h-3 bg-white rounded-full mx-1"></span>
@@ -233,6 +234,20 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-12">
+        <!-- Main Banner -->
+        <div class="bg-gradient-to-l from-blue-50 to-purple-50 border-2 border-blue-100 rounded-2xl shadow-lg p-8 mb-12 text-gray-800 text-center animate-fade-in">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Автоматическое обновление</h2>
+                <p class="text-xl md:text-2xl mb-4">
+                    Мы обновляем каждые <span class="font-bold text-blue-600">10 минут</span> более 
+                    <span class="font-bold text-blue-600">500 серверов</span>
+                </p>
+                <p class="text-lg md:text-xl text-gray-600">
+                    Вам не понадобится искать их самостоятельно — для вас все будет происходить автоматически
+                </p>
+            </div>
+        </div>
+
         <!-- Instructions -->
         <div class="bg-white rounded-2xl shadow-lg p-8 mb-12 animate-fade-in">
             <!-- <h2 class="text-2xl font-bold text-gray-800 mb-4">Как использовать:</h2> -->
@@ -277,31 +292,40 @@
         <!-- Recommended QR Codes -->
         <div id="recommended-qr" class="mb-12">
             <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">⭐ Рекомендованные QR-коды</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Recommended QR Code 10 -->
+                <div class="qr-card bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-10')">
+                    <div class="text-center">
+                        <img src="qr-codes/mariya-10.png" alt="Mariya VPN 10 ⭐" class="w-full h-auto rounded-lg mb-3">
+                        <h3 class="font-bold text-amber-800">⭐ Mariya #10</h3>
+                        <p class="text-sm text-amber-600">Рекомендуется</p>
+                    </div>
+                </div>
+
                 <!-- Recommended QR Code 22 -->
-                <div class="qr-card bg-gradient-to-br from-green-50 to-teal-50 border-2 border-green-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-22')">
+                <div class="qr-card bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-22')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-22.png" alt="Mariya VPN 22 ⭐" class="w-full h-auto rounded-lg mb-3">
-                        <h3 class="font-bold text-green-800">🚀 Mariya #22</h3>
-                        <p class="text-sm text-green-600">Рекомендуется</p>
+                        <h3 class="font-bold text-amber-800">🚀 Mariya #22</h3>
+                        <p class="text-sm text-amber-600">Рекомендуется</p>
                     </div>
                 </div>
 
                 <!-- Recommended QR Code 23 -->
-                <div class="qr-card bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-23')">
+                <div class="qr-card bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-23')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-23.png" alt="Mariya VPN 23 ⭐" class="w-full h-auto rounded-lg mb-3">
-                        <h3 class="font-bold text-purple-800">⚡ Mariya #23</h3>
-                        <p class="text-sm text-purple-600">Рекомендуется</p>
+                        <h3 class="font-bold text-amber-800">⚡ Mariya #23</h3>
+                        <p class="text-sm text-amber-600">Рекомендуется</p>
                     </div>
                 </div>
 
                 <!-- Recommended QR Code 24 -->
-                <div class="qr-card bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-24')">
+                <div class="qr-card bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-24')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-24.png" alt="Mariya VPN 24 ⭐" class="w-full h-auto rounded-lg mb-3">
-                        <h3 class="font-bold text-red-800">🔥 Mariya #24</h3>
-                        <p class="text-sm text-red-600">Рекомендуется</p>
+                        <h3 class="font-bold text-amber-800">🔥 Mariya #24</h3>
+                        <p class="text-sm text-amber-600">Рекомендуется</p>
                     </div>
                 </div>
             </div>
@@ -393,11 +417,11 @@
                 </div>
 
                 <!-- QR Code 10 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-10')">
+                <div class="qr-card bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-10')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-10.png" alt="Mariya VPN 10" class="w-full h-auto rounded-lg mb-3">
-                        <h3 class="font-semibold text-gray-800">Mariya #10</h3>
-                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
+                        <h3 class="font-semibold text-amber-800">Mariya #10</h3>
+                        <p class="text-sm text-amber-600">Нажмите для просмотра</p>
                     </div>
                 </div>
 
@@ -545,13 +569,16 @@
                 <div class="mb-6">
                     <h3 class="text-xl font-semibold text-gray-700 mb-4 text-center">🌟 Рекомендованные конфигурации:</h3>
                     <div class="flex flex-wrap justify-center gap-3">
-                        <button class="copy-link-btn bg-gradient-to-r from-green-500 to-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-green-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105" data-url="https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt">
+                        <button class="copy-link-btn bg-yellow-100 hover:bg-yellow-200 text-yellow-800 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105" data-url="https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-10.txt">
+                            ⭐ Mariya #10
+                        </button>
+                        <button class="copy-link-btn bg-yellow-100 hover:bg-yellow-200 text-yellow-800 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105" data-url="https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt">
                             🚀 Mariya #22
                         </button>
-                        <button class="copy-link-btn bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105" data-url="https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt">
+                        <button class="copy-link-btn bg-yellow-100 hover:bg-yellow-200 text-yellow-800 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105" data-url="https://github.com/sprutadm/free/refs/heads/main/githubmirror/mariya-23.txt">
                             ⚡ Mariya #23
                         </button>
-                        <button class="copy-link-btn bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105" data-url="https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt">
+                        <button class="copy-link-btn bg-yellow-100 hover:bg-yellow-200 text-yellow-800 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105" data-url="https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt">
                             🔥 Mariya #24
                         </button>
                     
@@ -615,10 +642,10 @@
                                 <span class="text-xs text-gray-500 group-hover:text-blue-500">🚀</span>
                             </div>
                         </button>
-                        <button class="copy-link-btn text-left bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-lg p-3 transition-all duration-300 group" data-url="https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-10.txt">
+                        <button class="copy-link-btn text-left bg-gradient-to-r from-yellow-50 to-amber-50 hover:from-yellow-100 hover:to-amber-100 border border-yellow-200 hover:border-yellow-300 rounded-lg p-3 transition-all duration-300 group" data-url="https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-10.txt">
                             <div class="flex items-center justify-between">
-                                <span class="text-sm font-medium text-gray-700 group-hover:text-blue-700">Mariya #10</span>
-                                <span class="text-xs text-gray-500 group-hover:text-blue-500">🚀</span>
+                                <span class="text-sm font-medium text-amber-700 group-hover:text-amber-800">Mariya #10</span>
+                                <span class="text-xs text-amber-500 group-hover:text-amber-600">🚀</span>
                             </div>
                         </button>
                         <button class="copy-link-btn text-left bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-lg p-3 transition-all duration-300 group" data-url="https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-11.txt">
@@ -894,7 +921,10 @@
     <!-- Footer -->
     <footer class="gradient-bg text-white py-8 mt-12">
         <div class="container mx-auto px-4 text-center">
-            <p class="text-lg opacity-90">🌟 Mariya VPN - Быстрое и надежное подключение</p>
+            <p class="text-lg opacity-90 flex items-center justify-center">
+                <img src="img/insurance.svg" alt="Insurance" class="w-6 h-6 mr-2">
+                Mariya VPN - Быстрое и надежное подключение
+            </p>
             <p class="text-sm opacity-75 mt-2">Обновляется каждые 10 минут</p>
         </div>
     </footer>
