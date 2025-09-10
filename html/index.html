@@ -59,8 +59,12 @@
                     <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
                         <span class="text-2xl">1️⃣</span>
                     </div>
-                    <h3 class="font-semibold text-gray-800 mb-2"><a href="https://apps.apple.com/ua/app/hiddify-proxy-vpn/id6596777532" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Скачайте Hiddify</a></h3>
-                    <p class="text-gray-600 text-sm">Установите приложение из App Store</p>
+                    <h3 class="font-semibold text-gray-800 mb-2">Скачайте Hiddify</h3>
+                    <p class="text-gray-600 text-sm mb-3">Установите приложение</p>
+                    <div class="mt-3 space-y-1">
+                        <a href="https://apps.apple.com/ua/app/hiddify-proxy-vpn/id6596777532" target="_blank" class="inline-block bg-blue-100 hover:bg-blue-200 text-blue-800 text-xs px-3 py-1 rounded-full transition-colors">📱 App Store</a>
+                        <a href="https://play.google.com/store/apps/details?id=app.hiddify.com" target="_blank" class="inline-block bg-green-100 hover:bg-green-200 text-green-800 text-xs px-3 py-1 rounded-full transition-colors">🤖 Google Play</a>
+                    </div>
                 </div>
                 <div class="text-center">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -68,6 +72,10 @@
                     </div>
                     <h3 class="font-semibold text-gray-800 mb-2">Отсканируйте QR</h3>
                     <p class="text-gray-600 text-sm">Наведите камеру на любой QR-код</p>
+                    <div class="mt-3 space-y-1">
+                        <a href="#recommended-qr" class="inline-block bg-green-100 hover:bg-green-200 text-green-800 text-xs px-3 py-1 rounded-full transition-colors">⭐ Рекомендуемые</a>
+                        <a href="#all-qr" class="inline-block bg-blue-100 hover:bg-blue-200 text-blue-800 text-xs px-3 py-1 rounded-full transition-colors">🔗 Все коды</a>
+                    </div>
                 </div>
                 <div class="text-center">
                     <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -79,10 +87,43 @@
             </div>
         </div>
 
+        <!-- Recommended QR Codes -->
+        <div id="recommended-qr" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">⭐ Рекомендованные QR-коды</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Recommended QR Code 22 -->
+                <div class="qr-card bg-gradient-to-br from-green-50 to-teal-50 border-2 border-green-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-22')">
+                    <div class="text-center">
+                        <img src="../qr-codes/mariya-22.png" alt="Mariya VPN 22 ⭐" class="w-full h-auto rounded-lg mb-3">
+                        <h3 class="font-bold text-green-800">🚀 Mariya #22</h3>
+                        <p class="text-sm text-green-600">Рекомендуется</p>
+                    </div>
+                </div>
+
+                <!-- Recommended QR Code 23 -->
+                <div class="qr-card bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-23')">
+                    <div class="text-center">
+                        <img src="../qr-codes/mariya-23.png" alt="Mariya VPN 23 ⭐" class="w-full h-auto rounded-lg mb-3">
+                        <h3 class="font-bold text-purple-800">⚡ Mariya #23</h3>
+                        <p class="text-sm text-purple-600">Рекомендуется</p>
+                    </div>
+                </div>
+
+                <!-- Recommended QR Code 24 -->
+                <div class="qr-card bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-24')">
+                    <div class="text-center">
+                        <img src="../qr-codes/mariya-24.png" alt="Mariya VPN 24 ⭐" class="w-full h-auto rounded-lg mb-3">
+                        <h3 class="font-bold text-red-800">🔥 Mariya #24</h3>
+                        <p class="text-sm text-red-600">Рекомендуется</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- QR Codes Grid -->
-        <div class="mb-8">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🔗 QR-коды конфигураций</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        <div id="all-qr" class="mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🔗 Все QR-коды конфигураций</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                 <!-- QR Code 1 -->
                 <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-1')">
                     <div class="text-center">
@@ -167,7 +208,7 @@
                 <!-- QR Code 10 -->
                 <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-10')">
                     <div class="text-center">
-                        <img src="../qr-codes/mariya-10.png" alt="Mariya VPN 10 ⭐ " class="w-full h-auto rounded-lg mb-3">
+                        <img src="../qr-codes/mariya-10.png" alt="Mariya VPN 10" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #10</h3>
                         <p class="text-sm text-gray-500">Нажмите для скачивания</p>
                     </div>
@@ -317,10 +358,6 @@
                 <div class="mb-6">
                     <h3 class="text-xl font-semibold text-gray-700 mb-4 text-center">🌟 Рекомендованные конфигурации:</h3>
                     <div class="flex flex-wrap justify-center gap-3">
-                       
-                         <button class="copy-link-btn bg-gradient-to-r from-orange-500 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105" data-url="https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-6.txt">
-                            🔥  Mariya #10
-                        </button>
                         <button class="copy-link-btn bg-gradient-to-r from-green-500 to-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-green-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105" data-url="https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt">
                             🚀 Mariya #22
                         </button>
@@ -393,7 +430,7 @@
                         </button>
                         <button class="copy-link-btn text-left bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-lg p-3 transition-all duration-300 group" data-url="https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-10.txt">
                             <div class="flex items-center justify-between">
-                                <span class="text-sm font-medium text-gray-700 group-hover:text-blue-700">Mariya #10 ⭐</span>
+                                <span class="text-sm font-medium text-gray-700 group-hover:text-blue-700">Mariya #10</span>
                                 <span class="text-xs text-gray-500 group-hover:text-blue-500">📋</span>
                             </div>
                         </button>
@@ -601,6 +638,20 @@
                     setTimeout(() => {
                         this.style.transform = '';
                     }, 150);
+                });
+            });
+
+            // Плавная прокрутка к якорям
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 });
             });
         });
