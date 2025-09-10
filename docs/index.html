@@ -29,6 +29,121 @@
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
+        
+        /* Модальное окно для QR-кодов */
+        .qr-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        
+        .qr-modal-content {
+            position: relative;
+            margin: 5% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            animation: modalFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        .qr-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .qr-modal-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .qr-modal-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        
+        .qr-modal-close:hover {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .qr-modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .qr-modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .qr-modal-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .qr-modal-btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .qr-modal-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .qr-modal-btn-secondary {
+            background: #f8f9fa;
+            color: #666;
+            border: 2px solid #e9ecef;
+        }
+        
+        .qr-modal-btn-secondary:hover {
+            background: #e9ecef;
+            color: #333;
+        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -92,7 +207,7 @@
             <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">⭐ Рекомендованные QR-коды</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Recommended QR Code 22 -->
-                <div class="qr-card bg-gradient-to-br from-green-50 to-teal-50 border-2 border-green-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-22')">
+                <div class="qr-card bg-gradient-to-br from-green-50 to-teal-50 border-2 border-green-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-22')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-22.png" alt="Mariya VPN 22 ⭐" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-bold text-green-800">🚀 Mariya #22</h3>
@@ -101,7 +216,7 @@
                 </div>
 
                 <!-- Recommended QR Code 23 -->
-                <div class="qr-card bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-23')">
+                <div class="qr-card bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-23')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-23.png" alt="Mariya VPN 23 ⭐" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-bold text-purple-800">⚡ Mariya #23</h3>
@@ -110,7 +225,7 @@
                 </div>
 
                 <!-- Recommended QR Code 24 -->
-                <div class="qr-card bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-24')">
+                <div class="qr-card bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-24')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-24.png" alt="Mariya VPN 24 ⭐" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-bold text-red-800">🔥 Mariya #24</h3>
@@ -125,227 +240,227 @@
             <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🔗 Все QR-коды конфигураций</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                 <!-- QR Code 1 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-1')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-1')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-1.png" alt="Mariya VPN 1" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #1</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 2 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-2')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-2')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-2.png" alt="Mariya VPN 2" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #2</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 3 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-3')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-3')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-3.png" alt="Mariya VPN 3" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #3</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 4 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-4')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-4')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-4.png" alt="Mariya VPN 4" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #4</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 5 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-5')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-5')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-5.png" alt="Mariya VPN 5" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #5</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 6 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-6')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-6')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-6.png" alt="Mariya VPN 6" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #6</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 7 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-7')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-7')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-7.png" alt="Mariya VPN 7" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #7</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 8 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-8')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-8')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-8.png" alt="Mariya VPN 8" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #8</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 9 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-9')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-9')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-9.png" alt="Mariya VPN 9" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #9</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 10 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-10')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-10')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-10.png" alt="Mariya VPN 10" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #10</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 11 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-11')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-11')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-11.png" alt="Mariya VPN 11" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #11</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 12 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-12')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-12')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-12.png" alt="Mariya VPN 12" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #12</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 13 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-13')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-13')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-13.png" alt="Mariya VPN 13" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #13</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 14 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-14')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-14')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-14.png" alt="Mariya VPN 14" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #14</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 15 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-15')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-15')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-15.png" alt="Mariya VPN 15" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #15</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 16 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-16')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-16')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-16.png" alt="Mariya VPN 16" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #16</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 17 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-17')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-17')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-17.png" alt="Mariya VPN 17" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #17</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 18 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-18')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-18')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-18.png" alt="Mariya VPN 18" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #18</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 19 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-19')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-19')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-19.png" alt="Mariya VPN 19" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #19</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 20 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-20')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-20')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-20.png" alt="Mariya VPN 20" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #20</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 21 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-21')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-21')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-21.png" alt="Mariya VPN 21" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #21</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 22 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-22')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-22')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-22.png" alt="Mariya VPN 22" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #22 ⭐ </h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 23 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-23')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-23')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-23.png" alt="Mariya VPN 23" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #23 ⭐ </h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 24 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-24')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-24')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-24.png" alt="Mariya VPN 24" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #24 ⭐ </h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
 
                 <!-- QR Code 25 -->
-                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="downloadQR('mariya-25')">
+                <div class="qr-card bg-white rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer" onclick="showQRModal('mariya-25')">
                     <div class="text-center">
                         <img src="qr-codes/mariya-25.png" alt="Mariya VPN 25" class="w-full h-auto rounded-lg mb-3">
                         <h3 class="font-semibold text-gray-800">Mariya #25</h3>
-                        <p class="text-sm text-gray-500">Нажмите для скачивания</p>
+                        <p class="text-sm text-gray-500">Нажмите для просмотра</p>
                     </div>
                 </div>
             </div>
@@ -563,13 +678,43 @@
         </div>
     </footer>
 
+    <!-- Модальное окно для QR-кодов -->
+    <div id="qrModal" class="qr-modal">
+        <div class="qr-modal-content">
+            <div class="qr-modal-header">
+                <h3 class="qr-modal-title" id="qrModalTitle">QR-код</h3>
+                <button class="qr-modal-close" onclick="closeQRModal()">&times;</button>
+            </div>
+            <img id="qrModalImage" class="qr-modal-image" src="" alt="QR-код">
+            <div class="qr-modal-actions">
+                <a id="qrModalDownload" class="qr-modal-btn qr-modal-btn-primary" href="" download="">Скачать</a>
+                <button class="qr-modal-btn qr-modal-btn-secondary" onclick="closeQRModal()">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Функция для скачивания QR-кода
-        function downloadQR(qrName) {
-            const link = document.createElement('a');
-            link.href = `qr-codes/${qrName}.png`;
-            link.download = `${qrName}.png`;
-            link.click();
+        // Функция для показа QR-кода в модальном окне
+        function showQRModal(qrName) {
+            const modal = document.getElementById('qrModal');
+            const modalImage = document.getElementById('qrModalImage');
+            const modalTitle = document.getElementById('qrModalTitle');
+            const modalDownload = document.getElementById('qrModalDownload');
+            
+            modalImage.src = `qr-codes/${qrName}.png`;
+            modalTitle.textContent = `Mariya #${qrName.split('-')[1]}`;
+            modalDownload.href = `qr-codes/${qrName}.png`;
+            modalDownload.download = `${qrName}.png`;
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Функция для закрытия модального окна
+        function closeQRModal() {
+            const modal = document.getElementById('qrModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Восстанавливаем прокрутку
         }
 
         // Функция для копирования ссылки в буфер обмена
@@ -653,6 +798,20 @@
                         });
                     }
                 });
+            });
+
+            // Закрытие модального окна по клику на фон
+            document.getElementById('qrModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeQRModal();
+                }
+            });
+
+            // Закрытие модального окна по Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeQRModal();
+                }
             });
         });
 
