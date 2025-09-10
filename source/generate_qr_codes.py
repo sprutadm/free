@@ -7,9 +7,22 @@ import os
 import qrcode
 from PIL import Image
 
-# Создаем папку для QR-кодов, если её нет
-if not os.path.exists("qr-codes"):
-    os.mkdir("qr-codes")
+# Создаем папку для QR-кодов в корневой директории, если её нет
+# Получаем путь к корневой директории проекта
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(script_dir)
+qr_codes_dir = os.path.join(project_root, "qr-codes")
+
+if not os.path.exists(qr_codes_dir):
+    os.mkdir(qr_codes_dir)
+else:
+    # Очищаем папку от старых QR-кодов
+    print("🧹 Очищаем папку от старых QR-кодов...")
+    for filename in os.listdir(qr_codes_dir):
+        if filename.endswith('.png'):
+            file_path = os.path.join(qr_codes_dir, filename)
+            os.remove(file_path)
+            print(f"🗑️  Удален: {filename}")
 
 # Базовый URL для вашего репозитория
 BASE_URL = "https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror"
@@ -37,8 +50,8 @@ for i in range(1, 26):
     if bbox:
         img = img.crop(bbox)
     
-    # Сохраняем изображение
-    filename = f"qr-codes/Mariya-Club-{i}.png"
+    # Сохраняем изображение в корневой директории
+    filename = os.path.join(qr_codes_dir, f"{i}.png")
     img.save(filename)
     
     print(f"✅ Создан QR-код: {filename} -> {config_url}")
