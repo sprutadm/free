@@ -80,7 +80,8 @@ URLS = [
     # "https://raw.githubusercontent.com/mheidari98/.proxy/refs/heads/main/all", #12
     "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/all.txt", #12
     "https://github.com/Kwinshadow/TelegramV2rayCollector/raw/refs/heads/main/sublinks/mix.txt", #13
-    "https://github.com/LalatinaHub/Mineral/raw/refs/heads/master/result/nodes", #14
+    # "https://github.com/LalatinaHub/Mineral/raw/refs/heads/master/result/nodes", #14
+    "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/refs/heads/master/collected-proxies/row-url/actives.txt", #14
     "https://raw.githubusercontent.com/miladtahanian/multi-proxy-config-fetcher/refs/heads/main/configs/proxy_configs.txt", #15
     "https://github.com/freefq/free/raw/refs/heads/master/v2", #16
     "https://github.com/MhdiTaheri/V2rayCollector_Py/raw/refs/heads/main/sub/Mix/mix.txt", #17
@@ -281,29 +282,53 @@ def commit_files_batch(repo, changed_files: list[tuple[str, str, str]], message:
     if not changed_files:
         return
 
-    # 1) читаем ветку
-    ref = repo.get_git_ref("heads/main")
-    base_commit = repo.get_git_commit(ref.object.sha)
+    try:
+        # 1) читаем ветку
+        ref = repo.get_git_ref("heads/main")
+        base_commit = repo.get_git_commit(ref.object.sha)
 
-    # 2) формируем элементы дерева
-    tree_elements: list[InputGitTreeElement] = []
-    print(f"🔍 DEBUG commit_files_batch: processing {len(changed_files)} files")
-    for i, (local_path, remote_path, content) in enumerate(changed_files):
-        print(f"🔍 DEBUG: processing file {i}: {remote_path}")
-        blob = repo.create_git_blob(content, "utf-8")
-        elem = InputGitTreeElement(
-            path=remote_path,
-            mode="100644",
-            type="blob",
-            sha=blob.sha,
-        )
-        tree_elements.append(elem)
-        print(f"🔍 DEBUG: created blob for {remote_path}, sha={blob.sha}")
+        # 2) формируем элементы дерева
+        tree_elements: list[InputGitTreeElement] = []
+        print(f"🔍 DEBUG commit_files_batch: processing {len(changed_files)} files")
+        
+        for i, (local_path, remote_path, content) in enumerate(changed_files):
+            print(f"🔍 DEBUG: processing file {i}: {remote_path} (size: {len(content)} bytes)")
+            try:
+                blob = repo.create_git_blob(content, "utf-8")
+                elem = InputGitTreeElement(
+                    path=remote_path,
+                    mode="100644",
+                    type="blob",
+                    sha=blob.sha,
+                )
+                tree_elements.append(elem)
+                print(f"🔍 DEBUG: created blob for {remote_path}, sha={blob.sha}")
+            except GithubException as e:
+                print(f"🔍 DEBUG: ERROR creating blob for {remote_path}: {e}")
+                raise e
 
-    # 3) создаём дерево и коммит
-    new_tree = repo.create_git_tree(tree_elements, base_commit.tree)
-    commit = repo.create_git_commit(message, new_tree, [base_commit])
-    ref.edit(commit.sha)
+        print(f"🔍 DEBUG: created {len(tree_elements)} tree elements")
+
+        # 3) создаём дерево и коммит
+        print(f"🔍 DEBUG: creating git tree...")
+        new_tree = repo.create_git_tree(tree_elements, base_commit.tree)
+        print(f"🔍 DEBUG: created tree with sha={new_tree.sha}")
+        
+        print(f"🔍 DEBUG: creating git commit...")
+        commit = repo.create_git_commit(message, new_tree, [base_commit])
+        print(f"🔍 DEBUG: created commit with sha={commit.sha}")
+        
+        print(f"🔍 DEBUG: updating branch reference...")
+        ref.edit(commit.sha)
+        print(f"🔍 DEBUG: branch reference updated successfully")
+        
+    except GithubException as e:
+        print(f"🔍 DEBUG: GithubException in commit_files_batch: {e}")
+        print(f"🔍 DEBUG: Error data: {getattr(e, 'data', {})}")
+        raise e
+    except Exception as e:
+        print(f"🔍 DEBUG: Unexpected error in commit_files_batch: {e}")
+        raise e
 
 def main():
     global changed_file_numbers
