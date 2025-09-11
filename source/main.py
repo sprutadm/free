@@ -18,6 +18,7 @@ from urllib3.util.retry import Retry
 
 LOGS_BY_FILE: dict[int, list[str]] = defaultdict(list)
 _LOG_LOCK = threading.Lock()
+changed_file_numbers = []
 
 
 _GITHUBMIRROR_INDEX_RE = re.compile(r"githubmirror/mariya-(\d+)\.txt")
@@ -207,20 +208,31 @@ def upload_to_github(local_path, remote_path):
             if remote_content is None or remote_content != content:
                 # Файл изменился - возвращаем данные для коммита
                 log(f"✅ Файл {remote_path} изменился")
+                # Добавляем номер файла в массив измененных
+                basename = os.path.basename(remote_path)
+                if basename.startswith("mariya-") and basename.endswith(".txt"):
+                    try:
+                        num = int(basename[7:-4])  # убираем "mariya-" и ".txt"
+                        changed_file_numbers.append(num)
+                    except ValueError:
+                        pass
                 return (local_path, remote_path, content)
             else:
                 log(f"🔄 Изменений для {remote_path} нет.")
                 return None
         except GithubException as e:
             if e.status == 404:
+                # Файл не существует - это новый файл
+                log(f"🆕 Файл {remote_path} не найден в репозитории, будет создан.")
+                # Добавляем номер файла в массив измененных
                 basename = os.path.basename(remote_path)
-                repo.create_file(
-                    path=remote_path,
-                    message=f"🆕 Первый коммит {basename} по часовому поясу Европа/Варшава: {offset}",
-                    content=content
-                )
-                log(f"🆕 Файл {remote_path} создан.")
-                return
+                if basename.startswith("mariya-") and basename.endswith(".txt"):
+                    try:
+                        num = int(basename[7:-4])  # убираем "mariya-" и ".txt"
+                        changed_file_numbers.append(num)
+                    except ValueError:
+                        pass
+                return (local_path, remote_path, content)
             elif e.status == 409 and attempt < max_retries - 1:
                 # SHA conflict — повторяем попытку
                 log(f"⚠️ Конфликт SHA при обновлении {remote_path}, повторяю (попытка {attempt+1})")
@@ -288,6 +300,9 @@ def commit_files_batch(repo, changed_files: list[tuple[str, str, str]], message:
     ref.edit(commit.sha)
 
 def main():
+    global changed_file_numbers
+    changed_file_numbers = []  # Очищаем массив измененных файлов
+    
     # Параллельно скачиваем файлы и сохраняем их локально
     max_workers_download = min(DEFAULT_MAX_WORKERS, max(1, len(URLS)))
 
@@ -307,18 +322,8 @@ def main():
 
     # ЕДИНЫЙ КОММИТ ДЛЯ ВСЕХ ИЗМЕНЕНИЙ
     if changed_files:
-        # Извлекаем номера файлов из путей
-        file_numbers = []
-        for _, remote_path, _ in changed_files:
-            basename = os.path.basename(remote_path)
-            if basename.startswith("mariya-") and basename.endswith(".txt"):
-                try:
-                    num = int(basename[7:-4])  # убираем "mariya-" и ".txt"
-                    file_numbers.append(num)
-                except ValueError:
-                    pass
-        
-        file_numbers.sort()
+        # Используем номера реально измененных файлов
+        file_numbers = sorted(changed_file_numbers)
         numbers_str = ", ".join(map(str, file_numbers))
         message = f"Update [{numbers_str}] - Data : {offset}"
         try:
