@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariya VPN - QR-коды для быстрого подключения</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/insurance.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeIn 0.6s ease-out; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen" x-data="vpnApp()">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in flex items-center justify-center">
+                <img src="img/insurance.svg" alt="Insurance" class="w-20 h-20 mr-4 -ml-10">
+                <span>Mariya VPN</span>
+            </h1>
+            <p class="text-xl md:text-2xl opacity-90 animate-fade-in">
+                Быстро • Удобно • Безопасно
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Main Banner -->
+        <div class="bg-gradient-to-l from-blue-50 to-purple-50 border-2 border-blue-100 rounded-2xl shadow-lg p-8 mb-12 text-gray-800 text-center animate-fade-in">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Автоматическое обновление</h2>
+                <div class="text-lg md:text-xl text-gray-700 max-w-7xl mx-auto">
+                    <div class="mb-4">
+                        Мы обновляем каждые <span class="font-bold text-blue-600">10 минут</span> список из более 
+                        <span class="font-bold text-blue-600">1200 серверов</span> по всему миру.</br> 
+                        В каждом блоке от <span class="font-bold text-blue-600">50 до 200 серверов</span>, 
+                        которые автоматически сортируются по скорости отдачи контента. 
+                        Все сервера используют самые мощные на сегодня протоколы:
+                    </div>
+                    <div class="text-center">
+                        <span class="font-bold text-purple-600">VMess</span>, 
+                        <span class="font-bold text-purple-600">Vless</span>, 
+                        <span class="font-bold text-purple-600">Trojan</span>, 
+                        <span class="font-bold text-purple-600">Shadowsocks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12 animate-fade-in">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center flex flex-col">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-2xl font-bold text-gray-800">1</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Скачайте Hiddify</h3>
+                    <p class="text-gray-600 text-sm mb-3">Установите приложение</p>
+                    <div class="space-y-2 mt-auto">
+                        <a href="https://apps.apple.com/ua/app/hiddify-proxy-vpn/id6596777532" target="_blank" class="inline-flex items-center bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full transition-colors">
+                            <img src="img/apple-logo.svg" alt="Apple" class="w-4 h-4 mr-2">
+                            App Store
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=app.hiddify.com" target="_blank" class="inline-flex items-center bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full transition-colors">
+                            <img src="img/google-play.svg" alt="Google Play" class="w-4 h-4 mr-2">
+                            Google Play
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center flex flex-col">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-2xl font-bold text-gray-800">2</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Откройте настройки</h3>
+                    <p class="text-gray-600 text-sm mb-3">Нажмите «Профили» или «Подключиться»</p>
+                    <div class="mt-3 space-y-1 mt-auto">
+                        <span class="inline-block bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">+ "Добавить новый профиль"</span>
+                    </div>
+                </div>
+                <div class="text-center flex flex-col">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-2xl font-bold text-gray-800">3</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Отсканируйте QR-код</h3>
+                    <p class="text-gray-600 text-sm mb-3">или вставте ссылку из буфера обмена</p>
+                    <div class="mt-3 space-y-1 mt-auto">
+                        <a href="#recommended-text" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full transition-colors">🔗 Ссылки для вставки</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommended QR Codes -->
+        <div id="recommended-qr" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">⭐ Рекомендованные QR-коды</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <template x-for="qr in recommendedQRCodes" :key="qr.id">
+                    <div class="qr-card bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-200 rounded-xl shadow-lg p-4 transition-all duration-300 cursor-pointer hover:scale-105" 
+                         @click="showQRModal(qr.id)">
+                        <div class="text-center">
+                            <img :src="`qr-codes/${qr.id}.png`" :alt="qr.name" class="w-full h-auto rounded-lg mb-3">
+                            <h3 class="font-bold text-amber-800" x-text="qr.name"></h3>
+                            <p class="text-sm text-amber-600">Рекомендуется</p>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- QR Codes Grid -->
+        <div id="all-qr" class="mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">📱 Все QR-коды</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                <template x-for="qr in allQRCodes" :key="qr.id">
+                    <div class="qr-card rounded-xl shadow-md p-4 transition-all duration-300 cursor-pointer hover:scale-105" 
+                         :class="qr.isRecommended ? 'bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-200' : 'bg-white'"
+                         @click="showQRModal(qr.id)">
+                        <div class="text-center">
+                            <img :src="`qr-codes/${qr.id}.png`" :alt="qr.name" class="w-full h-auto rounded-lg mb-3">
+                            <h3 class="font-semibold" :class="qr.isRecommended ? 'text-amber-800' : 'text-gray-800'" x-text="qr.name"></h3>
+                            <p class="text-sm" :class="qr.isRecommended ? 'text-amber-600' : 'text-gray-500'">Нажмите для просмотра</p>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- Text Links Section -->
+        <div class="mb-8" id="recommended-text">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">📋 Текстовые ссылки конфигураций</h2>
+            <div class="bg-white rounded-2xl shadow-lg p-8 animate-fade-in">
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4 text-center">🌟 Рекомендованные конфигурации:</h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <template x-for="config in recommendedConfigs" :key="config.id">
+                            <button class="copy-link-btn bg-yellow-100 hover:bg-yellow-200 text-yellow-800 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105" 
+                                    :data-url="config.url" @click="openHiddify(config.url)">
+                                <span x-text="config.name"></span>
+                            </button>
+                        </template>
+                    </div>
+                </div>
+                
+                <div class="border-t pt-6">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-4 text-center">📝 Все конфигурации (клик вставит конфигурацию в приложение):</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <template x-for="config in allConfigs" :key="config.id">
+                            <button class="copy-link-btn text-left rounded-lg p-3 transition-all duration-300 group" 
+                                    :class="config.isRecommended ? 'bg-gradient-to-r from-yellow-50 to-amber-50 hover:from-yellow-100 hover:to-amber-100 border border-yellow-200 hover:border-yellow-300' : 'bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300'"
+                                    :data-url="config.url" @click="openHiddify(config.url)">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium group-hover:text-blue-700" 
+                                          :class="config.isRecommended ? 'text-amber-700 group-hover:text-amber-800' : 'text-gray-700'"
+                                          x-text="config.name"></span>
+                                    <span class="text-xs group-hover:text-blue-500" 
+                                          :class="config.isRecommended ? 'text-amber-500 group-hover:text-amber-600' : 'text-gray-500'">🚀</span>
+                                </div>
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Supported Apps -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center animate-fade-in">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">📱 Поддерживаемые приложения</h3>
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <template x-for="platform in supportedApps" :key="platform.name">
+                        <div class="bg-white rounded-xl p-6 shadow-md">
+                            <h5 class="font-bold text-gray-800 mb-4 flex items-center">
+                                <img :src="platform.icon" :alt="platform.name" class="w-6 h-6 mr-3">
+                                <span x-text="platform.name"></span>
+                            </h5>
+                            <div class="space-y-3 text-left">
+                                <template x-for="app in platform.apps" :key="app.name">
+                                    <div>
+                                        <div x-show="app.isHiddify" class="bg-gradient-to-r from-yellow-50 to-amber-50 border-2 border-yellow-200 rounded-lg p-3">
+                                            <a href="https://hiddify.com/" target="_blank" class="block hover:from-yellow-100 hover:to-amber-100 hover:border-yellow-300 transition-all duration-300">
+                                                <p class="text-sm font-semibold text-amber-800">⭐ Hiddify</p>
+                                            </a>
+                                        </div>
+                                        <p x-show="!app.isHiddify" class="text-sm text-gray-600" x-text="`• ${app.name}`"></p>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <!-- YouTube Chrome Setup -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center animate-fade-in mt-8">
+            <h2 class="text-3xl font-bold mb-6">
+                <img src="img/youtube.svg" alt="YouTube" class="w-8 h-8 inline-block mr-3">
+                <span class="text-red-600">YouTube</span> для Chrome
+            </h2>
+            <p class="text-gray-600 text-xl font-semibold mb-20">В большинстве случаев он уже должен работать. Но в некоторых регионах понадобится установить дополнительный плагин</p>
+            
+            <div class="text-left max-w-7xl mx-auto">
+                <h4 class="text-2xl font-semibold text-gray-600 mb-4">Установка расширения</h4>
+                <div class="mb-6">
+                    <p class="text-gray-600 font-semibold text-lg">Скачайте: <a href="https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped?utm_source=item-share-cb" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Proxy SwitchyOmega 3 (ZeroOmega)</a></p>
+                </div>
+
+                <div class="mb-12">
+                    <p class="text-gray-600 font-semibold mb-6 text-lg">Теперь у вас на панели Chrome появится вот такой плагин в виде колечка.</p>
+                    <div class="text-center mb-10">
+                        <img src="img/plugin.png" alt="Plugin" class="max-w-xs mx-auto rounded-lg shadow-md">
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <p class="text-gray-600 font-semibold mb-6 text-lg">В развернутом виде он имеет вот такой вид</p>
+                    <div class="text-center mb-10">
+                        <img src="img/plugin-1.png" alt="Plugin expanded" class="max-w-xs mx-auto rounded-lg shadow-md">
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <p class="text-gray-600 font-semibold mb-6 text-lg">Нажимайте на Options. Переходим в настройки плагина и прописываем для proxy такие настройки:</p>
+                    
+                    <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                        <table class="w-full text-base">
+                            <thead>
+                                <tr class="border-b border-gray-200">
+                                    <th class="text-left py-2 font-semibold text-gray-600">Scheme</th>
+                                    <th class="text-left py-2 font-semibold text-gray-600">Protocol</th>
+                                    <th class="text-left py-2 font-semibold text-gray-600">Server</th>
+                                    <th class="text-left py-2 font-semibold text-gray-600">Port</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-2 text-gray-600">(default)</td>
+                                    <td class="py-2 text-gray-600">SOCKS5</td>
+                                    <td class="py-2 text-gray-600">127.0.0.1</td>
+                                    <td class="py-2 text-gray-600">12334</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="text-center mt-10 mb-10">
+                        <img src="img/omega.png" alt="Proxy SwitchyOmega settings" class="w-full max-w-7xl mx-auto rounded-lg shadow-md cursor-pointer hover:opacity-90 transition-opacity" @click="showImageModal('img/omega.png', 'Настройки Proxy SwitchyOmega')">
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <p class="text-gray-600 font-semibold mb-6 text-lg">
+                        Теперь, при отключенном VPN, отклчайте плагин (Direct). Кружек должен стать <span class="text-gray-400">серым</span>. 
+                        А со включенным VPN и плагином (выбрали proxy, кружочек стал <span class="text-emerald-500">зеленым</span>) будете ходить через proxy внутри VPN</p>
+                    <p class="text-gray-600 font-semibold mb-6 text-lg">При желании можете настроить в Options автоматическое (<span class="text-emerald-500">Auto switch</span>) переключение для каких сайтов будет использоваться proxy</p>
+                    <div class="text-center mb-10">
+                        <img src="img/plugin-2.png" alt="Plugin active" class="max-w-xs mx-auto rounded-lg shadow-md">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg opacity-90 flex items-center justify-center">
+                <img src="img/insurance.svg" alt="Insurance" class="w-6 h-6 mr-2">
+                Mariya VPN - Быстрое и надежное подключение
+            </p>
+            <p class="text-sm opacity-75 mt-2">Обновляется каждые 10 минут</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button x-show="showBackToTop" 
+            @click="scrollToTop()"
+            class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white w-12 h-12 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 z-50">
+        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <!-- QR Modal -->
+    <div x-show="showModal" 
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="qr-modal fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 backdrop-blur-md"
+         style="display: none;"
+         @click="closeQRModal()">
+        <div class="bg-white rounded-2xl p-6 w-full mx-4" 
+             :class="modalImage.includes('omega.png') ? 'max-w-9xl' : 'max-w-md'" 
+             @click.stop>
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-gray-800" x-text="modalTitle"></h3>
+                <button @click="closeQRModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <img :src="modalImage" :alt="modalTitle" 
+                 class="w-full h-auto rounded-lg mb-4"
+                 :class="modalImage.includes('omega.png') ? 'max-h-[70vh] object-contain' : ''">
+            <div x-show="!modalImage.includes('omega.png')" class="flex gap-3">
+                <button @click="downloadQR()" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                    Скачать
+                </button>
+                <button @click="closeQRModal()" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-lg transition-colors">
+                    Закрыть
+                </button>
+            </div>
+            <div x-show="modalImage.includes('omega.png')" class="flex justify-center">
+                <button @click="closeQRModal()" class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-6 py-2 rounded-lg transition-colors">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function vpnApp() {
+            return {
+                showModal: false,
+                modalTitle: '',
+                modalImage: '',
+                showBackToTop: false,
+                
+                // QR Codes Data
+                recommendedQRCodes: [
+                    { id: 'mariya-10', name: '⭐ Mariya #10' },
+                    { id: 'mariya-22', name: '🚀 Mariya #22' },
+                    { id: 'mariya-23', name: '⚡ Mariya #23' },
+                    { id: 'mariya-24', name: '🔥 Mariya #24' }
+                ],
+                
+                allQRCodes: Array.from({length: 25}, (_, i) => ({
+                    id: `mariya-${i + 1}`,
+                    name: `Mariya #${i + 1}`,
+                    isRecommended: [10, 22, 23, 24].includes(i + 1)
+                })),
+                
+                // Configs Data
+                recommendedConfigs: [
+                    { id: 'mariya-10', name: '⭐ Mariya #10', url: 'https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-10.txt' },
+                    { id: 'mariya-22', name: '🚀 Mariya #22', url: 'https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt' },
+                    { id: 'mariya-23', name: '⚡ Mariya #23', url: 'https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt' },
+                    { id: 'mariya-24', name: '🔥 Mariya #24', url: 'https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt' }
+                ],
+                
+                allConfigs: Array.from({length: 25}, (_, i) => ({
+                    id: `mariya-${i + 1}`,
+                    name: `Mariya #${i + 1}`,
+                    url: `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-${i + 1}.txt`,
+                    isRecommended: [10, 22, 23, 24].includes(i + 1)
+                })),
+                
+                // Supported Apps Data
+                supportedApps: [
+                    {
+                        name: 'iOS',
+                        icon: 'img/apple-logo.svg',
+                        apps: [
+                            { name: 'Hiddify', isHiddify: true },
+                            { name: 'Shadowrocket', isHiddify: false },
+                            { name: 'OneClick', isHiddify: false },
+                            { name: 'Quantumult X', isHiddify: false },
+                            { name: 'Surge', isHiddify: false }
+                        ]
+                    },
+                    {
+                        name: 'Android',
+                        icon: 'img/android.svg',
+                        apps: [
+                            { name: 'Hiddify', isHiddify: true },
+                            { name: 'V2rayNG', isHiddify: false },
+                            { name: 'Clash for Android', isHiddify: false },
+                            { name: 'SagerNet', isHiddify: false },
+                            { name: 'Surfboard', isHiddify: false }
+                        ]
+                    },
+                    {
+                        name: 'macOS',
+                        icon: 'img/apple-logo.svg',
+                        apps: [
+                            { name: 'Hiddify', isHiddify: true },
+                            { name: 'ClashX', isHiddify: false },
+                            { name: 'V2rayU', isHiddify: false },
+                            { name: 'ShadowsocksX-NG', isHiddify: false },
+                            { name: 'Surge for Mac', isHiddify: false }
+                        ]
+                    },
+                    {
+                        name: 'Windows',
+                        icon: 'img/windows.svg',
+                        apps: [
+                            { name: 'Hiddify', isHiddify: true },
+                            { name: 'Clash for Windows', isHiddify: false },
+                            { name: 'V2rayN', isHiddify: false },
+                            { name: 'Qv2ray', isHiddify: false },
+                            { name: 'ShadowsocksR-Windows', isHiddify: false }
+                        ]
+                    },
+                    {
+                        name: 'Linux',
+                        icon: 'img/linux-logo.svg',
+                        apps: [
+                            { name: 'Hiddify', isHiddify: true },
+                            { name: 'Clash for Linux', isHiddify: false },
+                            { name: 'V2ray-core', isHiddify: false },
+                            { name: 'Shadowsocks-libev', isHiddify: false },
+                            { name: 'Qv2ray', isHiddify: false }
+                        ]
+                    },
+                    {
+                        name: 'Роутеры',
+                        icon: 'img/router.svg',
+                        apps: [
+                            { name: 'OpenWrt + PassWall', isHiddify: false },
+                            { name: 'OpenWrt + V2ray', isHiddify: false },
+                            { name: 'OpenWrt + Clash', isHiddify: false },
+                            { name: 'Merlin + Clash', isHiddify: false }
+                        ]
+                    }
+                ],
+                
+                // Methods
+                showQRModal(qrId) {
+                    this.modalTitle = `Mariya VPN ${qrId.replace('mariya-', '#')}`;
+                    this.modalImage = `qr-codes/${qrId}.png`;
+                    this.showModal = true;
+                },
+                
+                closeQRModal() {
+                    this.showModal = false;
+                },
+                
+                downloadQR() {
+                    const link = document.createElement('a');
+                    link.href = this.modalImage;
+                    link.download = `${this.modalId}.png`;
+                    link.click();
+                },
+                
+                openHiddify(url) {
+                    const hiddifyUrl = `hiddify://import/${url}`;
+                    try {
+                        window.location.href = hiddifyUrl;
+                    } catch (err) {
+                        navigator.clipboard.writeText(hiddifyUrl).then(() => {
+                            this.showNotification('✅ Ссылка для Hiddify скопирована! Вставьте в приложение.');
+                        });
+                    }
+                },
+                
+                scrollToTop() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                },
+                
+                showNotification(message) {
+                    // Simple notification - could be enhanced
+                    console.log(message);
+                },
+                
+                showImageModal(imageSrc, imageTitle) {
+                    this.modalTitle = imageTitle;
+                    this.modalImage = imageSrc;
+                    this.showModal = true;
+                },
+                
+                // Scroll listener for back to top button
+                init() {
+                    // Ensure modal is hidden on init
+                    this.showModal = false;
+                    this.modalTitle = '';
+                    this.modalImage = '';
+                    
+                    window.addEventListener('scroll', () => {
+                        this.showBackToTop = window.pageYOffset > 300;
+                    });
+                }
+            }
+        }
+    </script>
+</body>
+</html>
