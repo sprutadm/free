@@ -77,7 +77,8 @@ URLS = [
     "https://vpn.fail/free-proxy/v2ray", #9
     "https://raw.githubusercontent.com/Proxydaemitelegram/Proxydaemi44/refs/heads/main/Proxydaemi44", #10
     "https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/mixed_iran.txt", #11
-    "https://raw.githubusercontent.com/mheidari98/.proxy/refs/heads/main/all", #12
+    # "https://raw.githubusercontent.com/mheidari98/.proxy/refs/heads/main/all", #12
+    "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/all.txt", #12
     "https://github.com/Kwinshadow/TelegramV2rayCollector/raw/refs/heads/main/sublinks/mix.txt", #13
     "https://github.com/LalatinaHub/Mineral/raw/refs/heads/master/result/nodes", #14
     "https://raw.githubusercontent.com/miladtahanian/multi-proxy-config-fetcher/refs/heads/main/configs/proxy_configs.txt", #15
