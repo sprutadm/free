@@ -7,22 +7,26 @@ import os
 import qrcode
 from PIL import Image
 
-# Создаем папку для QR-кодов в корневой директории, если её нет
+# Создаем папки для QR-кодов в корневой директории и в docs, если их нет
 # Получаем путь к корневой директории проекта
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(script_dir)
-qr_codes_dir = os.path.join(project_root, "qr-codes")
+qr_codes_root = os.path.join(project_root, "qr-codes")
+qr_codes_docs = os.path.join(project_root, "docs", "qr-codes")
 
-if not os.path.exists(qr_codes_dir):
-    os.mkdir(qr_codes_dir)
-else:
-    # Очищаем папку от старых QR-кодов
-    print("🧹 Очищаем папку от старых QR-кодов...")
-    for filename in os.listdir(qr_codes_dir):
-        if filename.endswith('.png'):
-            file_path = os.path.join(qr_codes_dir, filename)
-            os.remove(file_path)
-            print(f"🗑️  Удален: {filename}")
+# Создаем папки, если их нет
+for qr_dir in [qr_codes_root, qr_codes_docs]:
+    if not os.path.exists(qr_dir):
+        os.makedirs(qr_dir)
+        print(f"📁 Создана папка: {qr_dir}")
+    else:
+        # Очищаем папку от старых QR-кодов
+        print(f"🧹 Очищаем папку от старых QR-кодов: {qr_dir}")
+        for filename in os.listdir(qr_dir):
+            if filename.endswith('.png'):
+                file_path = os.path.join(qr_dir, filename)
+                os.remove(file_path)
+                print(f"🗑️  Удален: {filename}")
 
 # Базовый URL для вашего репозитория
 BASE_URL = "https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror"
@@ -50,11 +54,16 @@ for i in range(1, 26):
     if bbox:
         img = img.crop(bbox)
     
-    # Сохраняем изображение в корневой директории
-    filename = os.path.join(qr_codes_dir, f"mariya-{i}.png")
-    img.save(filename)
+    # Сохраняем изображение в обе папки
+    filename_root = os.path.join(qr_codes_root, f"mariya-{i}.png")
+    filename_docs = os.path.join(qr_codes_docs, f"mariya-{i}.png")
     
-    print(f"✅ Создан QR-код: {filename} -> {config_url}")
+    img.save(filename_root)
+    img.save(filename_docs)
+    
+    print(f"✅ Создан QR-код: mariya-{i}.png -> {config_url}")
 
 print("\n🎉 Все QR-коды успешно сгенерированы!")
-print("📁 Файлы сохранены в папке: qr-codes/")
+print("📁 Файлы сохранены в папках:")
+print(f"   - {qr_codes_root}")
+print(f"   - {qr_codes_docs}")
