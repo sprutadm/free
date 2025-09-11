@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariya VPN - Подключение к серверам</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../docs/img/insurance.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../docs/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../docs/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../docs/img/apple-touch-icon.png">
+    <link rel="manifest" href="../docs/img/site.webmanifest">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeIn 0.6s ease-out; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen" x-data="vpnApp()">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in flex items-center justify-center">
+                <img src="../docs/img/insurance.svg" alt="Insurance" class="w-20 h-20 mr-4 -ml-10">
+                <span>Mariya VPN</span>
+            </h1>
+            <p class="text-xl md:text-2xl opacity-90 animate-fade-in">
+                Быстро • Удобно • Безопасно
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Lorem Ipsum Block -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8 animate-fade-in">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Lorem Ipsum</h2>
+            <div class="prose max-w-none text-gray-600">
+                <p class="text-lg leading-relaxed mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                <p class="text-lg leading-relaxed mb-4">
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <p class="text-lg leading-relaxed">
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg opacity-90 flex items-center justify-center">
+                <img src="../docs/img/insurance.svg" alt="Insurance" class="w-6 h-6 mr-2">
+                Mariya VPN - Быстрое и надежное подключение
+            </p>
+            <p class="text-sm opacity-75 mt-2">Обновляется каждые 10 минут</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button x-show="showBackToTop" 
+            @click="scrollToTop()"
+            class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white w-12 h-12 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 z-50">
+        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <script>
+        function vpnApp() {
+            return {
+                showBackToTop: false,
+                
+                init() {
+                    window.addEventListener('scroll', () => {
+                        this.showBackToTop = window.scrollY > 300;
+                    });
+                },
+                
+                scrollToTop() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+    </script>
+</body>
+</html>
