@@ -214,6 +214,7 @@ def upload_to_github(local_path, remote_path):
                     try:
                         num = int(basename[7:-4])  # убираем "mariya-" и ".txt"
                         changed_file_numbers.append(num)
+                        print(f"🔍 DEBUG: added file number {num} to changed_file_numbers")
                     except ValueError:
                         pass
                 return (local_path, remote_path, content)
@@ -230,6 +231,7 @@ def upload_to_github(local_path, remote_path):
                     try:
                         num = int(basename[7:-4])  # убираем "mariya-" и ".txt"
                         changed_file_numbers.append(num)
+                        print(f"🔍 DEBUG: added file number {num} to changed_file_numbers (404)")
                     except ValueError:
                         pass
                 return (local_path, remote_path, content)
@@ -284,7 +286,9 @@ def commit_files_batch(repo, changed_files: list[tuple[str, str, str]], message:
 
     # 2) формируем элементы дерева
     tree_elements: list[InputGitTreeElement] = []
-    for local_path, remote_path, content in changed_files:
+    print(f"🔍 DEBUG commit_files_batch: processing {len(changed_files)} files")
+    for i, (local_path, remote_path, content) in enumerate(changed_files):
+        print(f"🔍 DEBUG: processing file {i}: {remote_path}")
         blob = repo.create_git_blob(content, "utf-8")
         elem = InputGitTreeElement(
             path=remote_path,
@@ -293,6 +297,7 @@ def commit_files_batch(repo, changed_files: list[tuple[str, str, str]], message:
             sha=blob.sha,
         )
         tree_elements.append(elem)
+        print(f"🔍 DEBUG: created blob for {remote_path}, sha={blob.sha}")
 
     # 3) создаём дерево и коммит
     new_tree = repo.create_git_tree(tree_elements, base_commit.tree)
@@ -322,10 +327,17 @@ def main():
 
     # ЕДИНЫЙ КОММИТ ДЛЯ ВСЕХ ИЗМЕНЕНИЙ
     if changed_files:
+        # ОТЛАДКА: печатаем содержимое массивов
+        print(f"🔍 DEBUG: changed_file_numbers = {changed_file_numbers}")
+        print(f"🔍 DEBUG: changed_files count = {len(changed_files)}")
+        for i, (local_path, remote_path, content) in enumerate(changed_files):
+            print(f"🔍 DEBUG: changed_files[{i}] = local='{local_path}', remote='{remote_path}', content_len={len(content)}")
+        
         # Используем номера реально измененных файлов
         file_numbers = sorted(changed_file_numbers)
         numbers_str = ", ".join(map(str, file_numbers))
         message = f"Update [{numbers_str}] - Data : {offset}"
+        print(f"🔍 DEBUG: commit message = '{message}'")
         try:
             commit_files_batch(REPO, changed_files, message)
             log(f"✅ Создан коммит с {len(changed_files)} измененными файлами")
