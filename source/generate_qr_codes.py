@@ -12,10 +12,10 @@ from PIL import Image
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(script_dir)
 qr_codes_root = os.path.join(project_root, "qr-codes")
-qr_codes_docs = os.path.join(project_root, "docs", "qr-codes")
+qr_codes_html = os.path.join(project_root, "html", "qr-codes")
 
 # Создаем папки, если их нет
-for qr_dir in [qr_codes_root, qr_codes_docs]:
+for qr_dir in [qr_codes_root, qr_codes_html]:
     if not os.path.exists(qr_dir):
         os.makedirs(qr_dir)
         print(f"📁 Создана папка: {qr_dir}")
@@ -56,14 +56,14 @@ for i in range(1, 26):
     
     # Сохраняем изображение в обе папки
     filename_root = os.path.join(qr_codes_root, f"mariya-{i}.png")
-    filename_docs = os.path.join(qr_codes_docs, f"mariya-{i}.png")
+    filename_html = os.path.join(qr_codes_html, f"mariya-{i}.png")
     
     img.save(filename_root)
-    img.save(filename_docs)
+    img.save(filename_html)
     
     print(f"✅ Создан QR-код: mariya-{i}.png -> {config_url}")
 
 print("\n🎉 Все QR-коды успешно сгенерированы!")
 print("📁 Файлы сохранены в папках:")
 print(f"   - {qr_codes_root}")
-print(f"   - {qr_codes_docs}")
+print(f"   - {qr_codes_html}")

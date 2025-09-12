@@ -16,7 +16,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'docs/**'
+      - 'html/**'
       # - 'githubmirror/**'
       - '.github/workflows/jekyll-docker.yml'
   
@@ -44,7 +44,7 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./docs
+          source: ./html
           destination: ./_site
           future: true
       
