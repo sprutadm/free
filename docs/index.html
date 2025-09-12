@@ -156,7 +156,7 @@
                                     <div class="flex items-center gap-2">
                                         <span class="text-xs text-amber-500 group-hover:text-amber-600 flex-shrink-0">🚀</span>
                                         <span class="text-sm font-medium text-amber-700 group-hover:text-amber-800 truncate">
-                                            <span>Hiddify-</span><span x-text="config.name"></span>
+                                            <span>Open Hiddify: </span><span x-text="config.name"></span>
                                         </span>
                                     </div>
                                 </button>
@@ -197,7 +197,7 @@
                                               :class="config.isRecommended ? 'text-amber-500 group-hover:text-amber-600' : 'text-gray-500'">🚀</span>
                                         <span class="text-sm font-medium group-hover:text-blue-700 truncate" 
                                               :class="config.isRecommended ? 'text-amber-700 group-hover:text-amber-800' : 'text-gray-700'">
-                                            <span>Hiddify-</span><span x-text="config.name"></span>
+                                            <span>Open Hiddify: </span><span x-text="config.name"></span>
                                         </span>
                                     </div>
                                 </button>
@@ -241,11 +241,17 @@
                                 <template x-for="app in platform.apps" :key="app.name">
                                     <div>
                                         <div x-show="app.isHiddify" class="bg-gradient-to-r from-yellow-50 to-amber-50 border-2 border-yellow-200 rounded-lg p-3">
-                                            <a href="https://hiddify.com/" target="_blank" class="block hover:from-yellow-100 hover:to-amber-100 hover:border-yellow-300 transition-all duration-300">
+                                            <a :href="getAppUrl(app)" target="_blank" class="flex items-center justify-between hover:from-yellow-100 hover:to-amber-100 hover:border-yellow-300 transition-all duration-300">
                                                 <p class="text-sm font-semibold text-amber-800">⭐ Hiddify</p>
+                                                <img src="img/download.svg" alt="Download" class="w-4 h-4 -mr-1 text-amber-600">
                                             </a>
                                         </div>
-                                        <p x-show="!app.isHiddify" class="text-sm text-gray-600" x-text="`• ${app.name}`"></p>
+                                        <div x-show="!app.isHiddify" class="text-sm text-gray-600 hover:text-gray-800 transition-colors">
+                                            <a :href="getAppUrl(app)" target="_blank" class="flex items-center justify-between p-2 rounded hover:bg-gray-50 transition-colors">
+                                                <span x-text="`• ${app.name}`"></span>
+                                                <img src="img/download.svg" alt="Download" class="w-4 h-4 text-gray-600">
+                                            </a>
+                                        </div>
                                     </div>
                                 </template>
                             </div>
@@ -392,10 +398,10 @@
                 
                 // QR Codes Data
                 recommendedQRCodes: [
-                    { id: 'mariya-10', name: '⭐ Mariya #10' },
+                    { id: 'mariya-10', name: '🚀 Mariya #10' },
                     { id: 'mariya-22', name: '🚀 Mariya #22' },
-                    { id: 'mariya-23', name: '⚡ Mariya #23' },
-                    { id: 'mariya-24', name: '🔥 Mariya #24' }
+                    { id: 'mariya-23', name: '🚀 Mariya #23' },
+                    { id: 'mariya-24', name: '🚀 Mariya #24' }
                 ],
                 
                 allQRCodes: Array.from({length: 25}, (_, i) => ({
@@ -425,65 +431,64 @@
                         name: 'iOS',
                         icon: 'img/apple-logo.svg',
                         apps: [
-                            { name: 'Hiddify', isHiddify: true },
-                            { name: 'Shadowrocket', isHiddify: false },
-                            { name: 'OneClick', isHiddify: false },
-                            { name: 'Quantumult X', isHiddify: false },
-                            { name: 'Surge', isHiddify: false }
+                            { name: 'Hiddify', isHiddify: true, url: 'https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532' },
+                            { name: 'Streisand', isHiddify: false, url: 'https://apps.apple.com/us/app/streisand/id6450534064' },
+                            { name: 'Sing-box VT', isHiddify: false, url: 'https://apps.apple.com/us/app/sing-box-vt/id6673731168' },
+                            { name: 'Shadowrocket', isHiddify: false, url: 'https://apps.apple.com/ca/app/shadowrocket/id932747118' },
+                            { name: 'V2rayTUN', isHiddify: false, url: 'https://apps.apple.com/ru/app/v2raytun/id6476628951' },
+                            { name: 'FoXray', isHiddify: false, url: 'https://apps.apple.com/us/app/foxray/id6448898396' },
+                            { name: 'Happ', isHiddify: false, url: 'https://apps.apple.com/us/app/happ-proxy-utility/id6504287215' }
                         ]
                     },
                     {
                         name: 'Android',
                         icon: 'img/android.svg',
                         apps: [
-                            { name: 'Hiddify', isHiddify: true },
-                            { name: 'V2rayNG', isHiddify: false },
-                            { name: 'Clash for Android', isHiddify: false },
-                            { name: 'SagerNet', isHiddify: false },
-                            { name: 'Surfboard', isHiddify: false }
-                        ]
-                    },
-                    {
-                        name: 'macOS',
-                        icon: 'img/apple-logo.svg',
-                        apps: [
-                            { name: 'Hiddify', isHiddify: true },
-                            { name: 'ClashX', isHiddify: false },
-                            { name: 'V2rayU', isHiddify: false },
-                            { name: 'ShadowsocksX-NG', isHiddify: false },
-                            { name: 'Surge for Mac', isHiddify: false }
+                            { name: 'Hiddify', isHiddify: true, url: 'https://play.google.com/store/apps/details?id=app.hiddify.com' },
+                            { name: 'v2rayNG', isHiddify: false, url: 'dynamic', dynamicId: 'v2rayNGv8a' },
+                            { name: 'Sing-box for Android', isHiddify: false, url: 'dynamic', dynamicId: 'SFA' },
+                            { name: 'Clash Meta for Android', isHiddify: false, url: 'dynamic', dynamicId: 'cmfa' }
                         ]
                     },
                     {
                         name: 'Windows',
                         icon: 'img/windows.svg',
                         apps: [
-                            { name: 'Hiddify', isHiddify: true },
-                            { name: 'Clash for Windows', isHiddify: false },
-                            { name: 'V2rayN', isHiddify: false },
-                            { name: 'Qv2ray', isHiddify: false },
-                            { name: 'ShadowsocksR-Windows', isHiddify: false }
+                            { name: 'Hiddify', isHiddify: true, url: 'https://github.com/hiddify/hiddify-next/releases' },
+                            { name: 'v2rayN', isHiddify: false, url: 'dynamic', dynamicId: 'v2rayNwin64' },
+                            { name: 'Clash Verge Rev', isHiddify: false, url: 'https://github.com/clash-verge-rev/clash-verge-rev/releases' },
+                            { name: 'Sing-box', isHiddify: false, url: 'dynamic', dynamicId: 'sb_win64' }
+                        ]
+                    },
+                    {
+                        name: 'macOS',
+                        icon: 'img/apple-logo.svg',
+                        apps: [
+                            { name: 'Hiddify', isHiddify: true, url: 'https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532' },
+                            { name: 'Clash Verge Rev', isHiddify: false, url: 'https://github.com/clash-verge-rev/clash-verge-rev/releases' },
+                            { name: 'V2rayU', isHiddify: false, url: 'https://github.com/yanue/V2rayU/releases' },
+                            { name: 'ShadowsocksX-NG', isHiddify: false, url: 'https://github.com/shadowsocks/ShadowsocksX-NG/releases' }
                         ]
                     },
                     {
                         name: 'Linux',
                         icon: 'img/linux-logo.svg',
                         apps: [
-                            { name: 'Hiddify', isHiddify: true },
-                            { name: 'Clash for Linux', isHiddify: false },
-                            { name: 'V2ray-core', isHiddify: false },
-                            { name: 'Shadowsocks-libev', isHiddify: false },
-                            { name: 'Qv2ray', isHiddify: false }
+                            { name: 'Hiddify', isHiddify: true, url: 'https://github.com/hiddify/hiddify-next/releases' },
+                            { name: 'Clash Verge Rev', isHiddify: false, url: 'https://github.com/clash-verge-rev/clash-verge-rev/releases' },
+                            { name: 'V2ray-core', isHiddify: false, url: 'https://github.com/v2fly/v2ray-core/releases' },
+                            { name: 'Shadowsocks-rust', isHiddify: false, url: 'https://github.com/shadowsocks/shadowsocks-rust/releases' },
+                            { name: 'Sing-box', isHiddify: false, url: 'https://github.com/SagerNet/sing-box/releases' }
                         ]
                     },
                     {
                         name: 'Роутеры',
                         icon: 'img/router.svg',
                         apps: [
-                            { name: 'OpenWrt + PassWall', isHiddify: false },
-                            { name: 'OpenWrt + V2ray', isHiddify: false },
-                            { name: 'OpenWrt + Clash', isHiddify: false },
-                            { name: 'Merlin + Clash', isHiddify: false }
+                            { name: 'OpenWrt + PassWall', isHiddify: false, url: 'https://github.com/xiaorouji/openwrt-passwall' },
+                            { name: 'OpenWrt + V2ray', isHiddify: false, url: 'https://github.com/kuoruan/openwrt-v2ray' },
+                            { name: 'OpenWrt + OpenClash', isHiddify: false, url: 'https://github.com/vernesong/OpenClash' },
+                            { name: 'Merlin + ClashMerlin', isHiddify: false, url: 'https://github.com/KOP-XIAO/Clash-Merlin' }
                         ]
                     }
                 ],
@@ -562,6 +567,136 @@
                     window.addEventListener('scroll', () => {
                         this.showBackToTop = window.pageYOffset > 300;
                     });
+
+                    // Update dynamic download links
+                    this.updateDynamicLinks();
+                },
+
+                async updateDynamicLinks() {
+                    // Дефолтные ссылки на случай недоступности API
+                    const defaultLinks = {
+                        SFA: 'https://github.com/SagerNet/sing-box/releases/download/v1.8.10/SFA-1.8.10-universal.apk',
+                        sb_win64: 'https://github.com/SagerNet/sing-box/releases/download/v1.8.10/sing-box-1.8.10-windows-amd64.zip',
+                        v2rayNGv8a: 'https://github.com/2dust/v2rayNG/releases/download/1.8.29/v2rayNG_1.8.29_universal.apk',
+                        v2rayNwin64: 'https://github.com/2dust/v2rayN/releases/download/6.42/v2rayN-windows-64-SelfContained-With-Core.zip',
+                        cmfa: 'https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.9.3/cmfa-2.9.3-meta-universal-release.apk',
+                        flclashwin64: 'https://github.com/chen08209/FlClash/releases/download/v0.8.56/FlClash-0.8.56-windows-amd64-setup.exe'
+                    };
+
+                    const apis = {
+                        singbox: 'https://api.github.com/repos/SagerNet/sing-box/releases/latest',
+                        v2rayng: 'https://api.github.com/repos/2dust/v2rayNG/releases/latest',
+                        cmfa: 'https://api.github.com/repos/MetaCubeX/ClashMetaForAndroid/releases/latest',
+                        v2rayNwin64: 'https://api.github.com/repos/2dust/v2rayN/releases/latest',
+                        flclashwin64: 'https://api.github.com/repos/chen08209/FlClash/releases/latest'
+                    };
+
+                    // Инициализируем дефолтными ссылками
+                    this.dynamicUrls = { ...defaultLinks };
+
+                    const fetchWithTimeout = async (url, timeoutMs = 10000) => {
+                        const controller = new AbortController();
+                        const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+                        
+                        try {
+                            const response = await fetch(url, {
+                                signal: controller.signal,
+                                headers: {
+                                    'Accept': 'application/vnd.github.v3+json'
+                                }
+                            });
+                            clearTimeout(timeoutId);
+                            
+                            if (!response.ok) {
+                                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                            }
+                            
+                            return response;
+                        } catch (error) {
+                            clearTimeout(timeoutId);
+                            throw error;
+                        }
+                    };
+
+                    const getLatestReleaseNameSafe = async (apiUrl, retries = 2) => {
+                        for (let attempt = 1; attempt <= retries; attempt++) {
+                            try {
+                                console.log(`🔍 Попытка ${attempt}/${retries} получить данные с ${apiUrl}`);
+                                const response = await fetchWithTimeout(apiUrl, 8000);
+                                const data = await response.json();
+                                
+                                if (data.tag_name) {
+                                    console.log(`✅ Успешно получен релиз: ${data.tag_name}`);
+                                    return data.tag_name;
+                                } else {
+                                    throw new Error('Нет tag_name в ответе API');
+                                }
+                            } catch (error) {
+                                console.warn(`⚠️ Попытка ${attempt} неудачна для ${apiUrl}:`, error.message);
+                                
+                                if (attempt === retries) {
+                                    console.error(`❌ Все попытки исчерпаны для ${apiUrl}`);
+                                    throw error;
+                                }
+                                
+                                // Экспоненциальная задержка между попытками
+                                await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt) * 1000));
+                            }
+                        }
+                    };
+
+                    const updateSingleApp = async (apiKey, apiUrl, updateFunction) => {
+                        try {
+                            const releaseName = await getLatestReleaseNameSafe(apiUrl);
+                            updateFunction(releaseName);
+                            console.log(`✅ Обновлены ссылки для ${apiKey}`);
+                        } catch (error) {
+                            console.warn(`⚠️ Используем дефолтную ссылку для ${apiKey}:`, error.message);
+                        }
+                    };
+
+                    // Параллельное обновление всех приложений
+                    const updatePromises = [
+                        // Sing-box
+                        updateSingleApp('sing-box', apis.singbox, (sfaName) => {
+                            this.dynamicUrls.SFA = `https://github.com/SagerNet/sing-box/releases/download/v${sfaName}/SFA-${sfaName}-universal.apk`;
+                            this.dynamicUrls.sb_win64 = `https://github.com/SagerNet/sing-box/releases/download/v${sfaName}/sing-box-${sfaName}-windows-amd64.zip`;
+                        }),
+                        
+                        // v2rayNG
+                        updateSingleApp('v2rayNG', apis.v2rayng, (v2rayngName) => {
+                            this.dynamicUrls.v2rayNGv8a = `https://github.com/2dust/v2rayNG/releases/download/${v2rayngName}/v2rayNG_${v2rayngName}_universal.apk`;
+                        }),
+                        
+                        // v2rayN Windows
+                        updateSingleApp('v2rayN', apis.v2rayNwin64, (v2rayNwin64Name) => {
+                            this.dynamicUrls.v2rayNwin64 = `https://github.com/2dust/v2rayN/releases/download/${v2rayNwin64Name}/v2rayN-windows-64-SelfContained-With-Core.zip`;
+                        }),
+                        
+                        // Clash Meta for Android
+                        updateSingleApp('CMFA', apis.cmfa, (cmfaName) => {
+                            const cmfa_version = cmfaName.substring(1);
+                            this.dynamicUrls.cmfa = `https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/${cmfaName}/cmfa-${cmfa_version}-meta-universal-release.apk`;
+                        }),
+                        
+                        // FlClash
+                        updateSingleApp('FlClash', apis.flclashwin64, (flclashName) => {
+                            const flclash_version = flclashName.substring(1);
+                            this.dynamicUrls.flclashwin64 = `https://github.com/chen08209/FlClash/releases/download/${flclashName}/FlClash-${flclash_version}-windows-amd64-setup.exe`;
+                        })
+                    ];
+
+                    // Ждем завершения всех запросов (или их фейла)
+                    await Promise.allSettled(updatePromises);
+                    
+                    console.log('🎯 Обновление ссылок завершено. Итоговые ссылки:', this.dynamicUrls);
+                },
+
+                getAppUrl(app) {
+                    if (app.url === 'dynamic' && this.dynamicUrls && this.dynamicUrls[app.dynamicId]) {
+                        return this.dynamicUrls[app.dynamicId];
+                    }
+                    return app.url;
                 }
             }
         }
