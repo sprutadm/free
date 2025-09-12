@@ -414,6 +414,9 @@
                 modalImage: '',
                 showBackToTop: false,
                 
+                // Dynamic configuration
+                loadedBaseColor: 'orange', // Default fallback
+                
                 // ========================================
                 // CONFIGURATION CONSTANTS
                 // ========================================
@@ -436,8 +439,10 @@
                 // 🔵  BLUES:    cyan, sky, blue, indigo
                 // 🟣  PURPLES:  violet, purple, fuchsia
                 //
-                // 💡 Just change the value below to switch the entire theme!
-                BASE_COLOR: 'orange',
+                // 💡 This value is now loaded dynamically from config.json!
+                get BASE_COLOR() {
+                    return this.loadedBaseColor;
+                },
                 
                 // Dynamic color getters based on BASE_COLOR
                 get RECOMMENDED_COLORS() {
@@ -722,8 +727,30 @@
                 // LIFECYCLE METHODS
                 // ========================================
                 
+                // Load configuration from GitHub
+                async loadConfig() {
+                    try {
+                        const response = await fetch('https://raw.githubusercontent.com/sprutadm/free/refs/heads/main/docs/config.json');
+                        const config = await response.json();
+                        
+                        // Apply loaded color
+                        this.loadedBaseColor = config.base_color;
+                        console.log('✅ Config loaded:', config.base_color);
+                        console.log('🎨 Theme updated to:', this.loadedBaseColor);
+                        
+                        return config;
+                    } catch (error) {
+                        console.error('❌ Failed to load config:', error);
+                        console.log('🛠️ Using fallback color:', this.loadedBaseColor);
+                        return null;
+                    }
+                },
+                
                 // Component initialization
                 init() {
+                    // Load configuration first
+                    this.loadConfig();
+                    
                     // Ensure modal is hidden on init
                     this.showModal = false;
                     this.modalTitle = '';
