@@ -1,3 +1,7 @@
 {
-  "base_color": "orange"
+    "base_color": "orange",
+    "base_config_url": "https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror",
+    "base_config_name": "mariya",
+    "total_configs": 25,
+    "recommended_ids": [10, 22, 23, 24]
 }
