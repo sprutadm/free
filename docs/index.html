@@ -741,8 +741,18 @@
                 
                 // Load configuration from GitHub
                 async loadConfig() {
+                    
+                    //const configUrl = 'https://raw.githubusercontent.com/sprutadm/free/refs/heads/main/docs/config.json';
+                    const configUrl = 'https://sprutadm.github.io/free/config.json';
+                    
                     try {
-                        const response = await fetch('https://raw.githubusercontent.com/sprutadm/free/refs/heads/main/docs/config.json');
+                        const response = await fetch(configUrl, {
+                            method: 'GET',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            mode: 'cors'
+                        });
                         const config = await response.json();
                         
                         // Apply loaded configuration
