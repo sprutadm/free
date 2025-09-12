@@ -397,33 +397,45 @@
                 showBackToTop: false,
                 
                 // QR Codes Data
-                recommendedQRCodes: [
-                    { id: 'mariya-10', name: '🚀 Mariya #10' },
-                    { id: 'mariya-22', name: '🚀 Mariya #22' },
-                    { id: 'mariya-23', name: '🚀 Mariya #23' },
-                    { id: 'mariya-24', name: '🚀 Mariya #24' }
-                ],
+                get recommendedQRCodes() {
+                    const icons = ['⭐', '🚀', '⚡', '🔥'];
+                    return this.RECOMMENDED_IDS.map((id, index) => ({
+                        id: `${this.BASE_CONFIG_NAME}-${id}`,
+                        name: `${icons[index] || '⭐'} Mariya #${id}`
+                    }));
+                },
                 
-                allQRCodes: Array.from({length: 25}, (_, i) => ({
-                    id: `mariya-${i + 1}`,
-                    name: `Mariya #${i + 1}`,
-                    isRecommended: [10, 22, 23, 24].includes(i + 1)
-                })),
+                get allQRCodes() {
+                    return Array.from({length: this.TOTAL_CONFIGS}, (_, i) => ({
+                        id: `${this.BASE_CONFIG_NAME}-${i + 1}`,
+                        name: `Mariya #${i + 1}`,
+                        isRecommended: this.RECOMMENDED_IDS.includes(i + 1)
+                    }));
+                },
                 
-                // Configs Data
-                recommendedConfigs: [
-                    { id: 'mariya-10', name: 'Mariya #10', url: 'https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-10.txt' },
-                    { id: 'mariya-22', name: 'Mariya #22', url: 'https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-22.txt' },
-                    { id: 'mariya-23', name: 'Mariya #23', url: 'https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-23.txt' },
-                    { id: 'mariya-24', name: 'Mariya #24', url: 'https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-24.txt' }
-                ],
+                // Base Configuration Constants
+                BASE_CONFIG_URL: 'https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror',
+                BASE_CONFIG_NAME: 'mariya',
+                TOTAL_CONFIGS: 25,
+                RECOMMENDED_IDS: [10, 22, 23, 24],
                 
-                allConfigs: Array.from({length: 25}, (_, i) => ({
-                    id: `mariya-${i + 1}`,
-                    name: `Mariya #${i + 1}`,
-                    url: `https://github.com/sprutadm/free/raw/refs/heads/main/githubmirror/mariya-${i + 1}.txt`,
-                    isRecommended: [10, 22, 23, 24].includes(i + 1)
-                })),
+                // Generate configurations dynamically
+                get recommendedConfigs() {
+                    return this.RECOMMENDED_IDS.map(id => ({
+                        id: `${this.BASE_CONFIG_NAME}-${id}`,
+                        name: `Mariya #${id}`,
+                        url: `${this.BASE_CONFIG_URL}/${this.BASE_CONFIG_NAME}-${id}.txt`
+                    }));
+                },
+                
+                get allConfigs() {
+                    return Array.from({length: this.TOTAL_CONFIGS}, (_, i) => ({
+                        id: `${this.BASE_CONFIG_NAME}-${i + 1}`,
+                        name: `Mariya #${i + 1}`,
+                        url: `${this.BASE_CONFIG_URL}/${this.BASE_CONFIG_NAME}-${i + 1}.txt`,
+                        isRecommended: this.RECOMMENDED_IDS.includes(i + 1)
+                    }));
+                },
                 
                 // Supported Apps Data
                 supportedApps: [
@@ -495,7 +507,8 @@
                 
                 // Methods
                 showQRModal(qrId) {
-                    this.modalTitle = `Mariya VPN ${qrId.replace('mariya-', '#')}`;
+                    const configNumber = qrId.replace(`${this.BASE_CONFIG_NAME}-`, '#');
+                    this.modalTitle = `Mariya VPN ${configNumber}`;
                     this.modalImage = `qr-codes/${qrId}.png`;
                     this.showModal = true;
                 },
