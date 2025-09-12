@@ -34,6 +34,12 @@ wheels/
 *.swp
 *.swo
 
+# Node.js
+node_modules/
+package-lock.json
+src/
+
 # OS
 .DS_Store
 Thumbs.db
+
