@@ -3,8 +3,8 @@ name: Deploy GitHub Pages
 on:
 
 # Ежедневное обновление в 00:00 UTC (03:00 МСК)
-  schedule:
-    - cron: "0 0 * * *"
+  # schedule:
+  #   - cron: "0 0 * * *"
 
   # Запускается после завершения Frequent Update (закомментировано - не нужно пересобирать сайт после каждого обновления файлов)
   # workflow_run:
@@ -14,12 +14,12 @@ on:
   
   
   # Старый вариант (закомментирован):
-  # push:
-  #   branches: [ "main" ]
-  #   paths:
-  #     - 'docs/**'
-  #     - 'githubmirror/**'
-  #     - '.github/workflows/jekyll-docker.yml'
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'docs/**'
+      # - 'githubmirror/**'
+      - '.github/workflows/jekyll-docker.yml'
   
   workflow_dispatch:
 
