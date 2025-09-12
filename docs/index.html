@@ -167,7 +167,10 @@
                                         :data-url="config.url" @click="copyToClipboard(config.url)"
                                         :title="`Скопировать ссылку ${config.name} в буфер`">
                                     <div class="flex items-center justify-center">
-                                        <span class="text-xs text-amber-500 group-hover:text-amber-600 group-hover:scale-110 transition-all whitespace-nowrap">Copy 📋</span>
+                                        <div class="flex items-center gap-1">
+                                            <span class="text-xs text-amber-500 group-hover:text-amber-600 whitespace-nowrap">Copy</span>
+                                            <img src="img/copy.svg" alt="Copy" class="w-3 h-3 text-amber-500 group-hover:text-amber-600 group-hover:scale-110 transition-all">
+                                        </div>
                                     </div>
                                 </button>
                             </div>
@@ -176,7 +179,7 @@
                     <div class="mt-4 text-center">
                         <p class="text-sm text-gray-600">
                             <span class="inline-block mr-4">🚀 Hiddify - откроет в приложении</span>
-                            <span class="inline-block">📋 Copy - скопирует ссылку в буфер</span>
+                            <span class="inline-block flex items-center gap-1"><img src="img/copy.svg" alt="Copy" class="w-3 h-3"> Copy - скопирует ссылку в буфер</span>
                         </p>
                     </div>
                 </div>
@@ -209,8 +212,12 @@
                                         :data-url="config.url" @click="copyToClipboard(config.url)"
                                         :title="`Скопировать ссылку ${config.name} в буфер`">
                                     <div class="flex items-center justify-center">
-                                        <span class="text-xs group-hover:text-blue-500 group-hover:scale-110 transition-all whitespace-nowrap" 
-                                              :class="config.isRecommended ? 'text-amber-500 group-hover:text-amber-600' : 'text-gray-500'">Copy 📋</span>
+                                        <div class="flex items-center gap-1">
+                                            <span class="text-xs group-hover:text-blue-500 whitespace-nowrap" 
+                                                  :class="config.isRecommended ? 'text-amber-500 group-hover:text-amber-600' : 'text-gray-500'">Copy</span>
+                                            <img src="img/copy.svg" alt="Copy" class="w-3 h-3 group-hover:scale-110 transition-all"
+                                                 :class="config.isRecommended ? 'text-amber-500 group-hover:text-amber-600' : 'text-gray-500 group-hover:text-blue-500'">
+                                        </div>
                                     </div>
                                 </button>
                             </div>
@@ -219,7 +226,7 @@
                     <div class="mt-4 text-center">
                         <p class="text-sm text-gray-600">
                             <span class="inline-block mr-4">🚀 Hiddify - откроет в приложении</span>
-                            <span class="inline-block">📋 Copy - скопирует ссылку в буфер</span>
+                            <span class="inline-block flex items-center gap-1"><img src="img/copy.svg" alt="Copy" class="w-3 h-3"> Copy - скопирует ссылку в буфер</span>
                         </p>
                     </div>
                 </div>
